@@ -48,25 +48,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const deck = document.getElementById('deck');
 
-    // ==========================================
-    // 1. Swipe Controls (Touch Screens)
+  // ==========================================
+    // 1. Swipe Controls (Touch Screens) - FIXED
     // ==========================================
     let touchstartX = 0;
     let touchendX = 0;
-    const swipeThreshold = 50; 
+    const swipeThreshold = 50; // Minimum distance for a valid swipe
+    let isValidSwipe = true; // Tracks if the gesture is a single-finger swipe
 
     deck.addEventListener('touchstart', (e) => {
+        // If multiple fingers touch the screen (e.g., pinch), cancel the swipe
+        if (e.touches.length > 1) {
+            isValidSwipe = false;
+            return;
+        }
+        isValidSwipe = true; // Reset for a valid single touch
         touchstartX = e.changedTouches[0].screenX;
     }, { passive: true });
 
+    // Listen for movement in case a second finger lands mid-swipe
+    deck.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 1) {
+            isValidSwipe = false;
+        }
+    }, { passive: true });
+
     deck.addEventListener('touchend', (e) => {
+        // Abort navigation if the gesture involved multiple fingers
+        if (!isValidSwipe) return;
+
         touchendX = e.changedTouches[0].screenX;
         const distance = touchendX - touchstartX;
 
         if (distance < -swipeThreshold) {
-            changeSlide(currentIdx + 1); 
+            // Swiped left (Next Slide)
+            changeSlide(currentIdx + 1);
         } else if (distance > swipeThreshold) {
-            changeSlide(currentIdx - 1); 
+            // Swiped right (Previous Slide)
+            changeSlide(currentIdx - 1);
         }
     });
 
