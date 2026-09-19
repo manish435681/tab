@@ -1,0 +1,2988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Supply System & Brake System Deck</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Cursor Highlight Overlay -->
+    <div class="cursor-halo" id="cursor-halo"></div>
+
+    <!-- Background decorative elements -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <div class="app-wrapper">
+        <main class="deck" id="deck">
+            
+<!-- Slide 1: Cover -->
+<section class="slide active">
+    <div class="slide-content cover-slide">
+        <div class="badge">TRACTION & PROPULSION SYSTEM</div>
+        <h1 class="hero-title">
+            Power Supply System,<br>
+            <span class="gradient-text">Air Supply System,</span><br>
+            & Brake System
+        </h1>
+        <p class="hero-subtitle">High Voltage System & Train Configuration</p>
+    </div>
+</section>
+
+
+
+
+<!-- Slide 2: OHE Specifications -->
+            <section class="slide">
+                <div class="slide-content split-layout">
+                    <div class="split-text">
+                        <h2 class="section-title">OHE (Overhead Equipment)  </h2>
+                        <p class="section-subtitle">OHE (Overhead equipment) is also called OCS (overhead conductor system) or OLE (Overhead line equipment) or Catenary etc. OCS may further be divided in flexible (FOCS) or rigid (ROCS). </p>
+                        
+                      
+                           
+                        </ul>
+                    </div>
+                    
+                    <!-- Right Side Image Container -->
+                    <div class="split-visual" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/2a.jpg" 
+                             alt="OHE Equipment Spec" 
+                             style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); cursor: zoom-in;" 
+                             onclick="openZoom()">
+                    </div>
+                </div>
+
+                <!-- Fullscreen Zoom Overlay -->
+                <div id="zoom-overlay-2" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 9999; flex-direction: column;">
+                    
+                    <!-- Image Container (Takes up space above the nav bar) -->
+                    <div style="flex-grow: 1; width: 100vw; display: flex; align-items: center; justify-content: center; overflow: auto; padding-top: 20px;">
+                        <img id="zoomed-img-2" src="assets/2a.jpg" alt="Zoomed Spec" style="max-height: 100%; max-width: 100%; object-fit: contain; transform: scale(1); transition: transform 0.25s ease; transform-origin: center center;">
+                    </div>
+
+                    <!-- Transparent Navigation Bar (Completely outside image frame) -->
+                    <div style="width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; gap: 20px; background: transparent;">
+                        <button onclick="adjustZoom(-0.25)" style="background: none; border: none; color: white; font-size: 32px; cursor: pointer; padding: 0 10px; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">−</button>
+                        <span id="zoom-text" style="color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; min-width: 55px; text-align: center; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">100%</span>
+                        <button onclick="adjustZoom(0.25)" style="background: none; border: none; color: white; font-size: 30px; cursor: pointer; padding: 0 10px; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">+</button>
+                        <div style="width: 2px; height: 24px; background: rgba(255,255,255,0.5); box-shadow: 0 2px 10px rgba(0,0,0,0.8); margin: 0 10px;"></div>
+                        <button onclick="closeZoom()" style="background: none; border: none; color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; padding: 0 10px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">Close</button>
+                    </div>
+                </div>
+
+                <!-- Zoom Logic Script -->
+                <script>
+                    let currentZoom = 1;
+                    
+                    function openZoom() {
+                        document.getElementById('zoom-overlay-2').style.display = 'flex';
+                        currentZoom = 1;
+                        updateZoomDisplay();
+                    }
+                    
+                    function closeZoom() {
+                        document.getElementById('zoom-overlay-2').style.display = 'none';
+                    }
+                    
+                    function adjustZoom(amount) {
+                        currentZoom += amount;
+                        if (currentZoom < 0.5) currentZoom = 0.5; // Limits zoom out to 50%
+                        if (currentZoom > 4) currentZoom = 4;     // Limits zoom in to 400%
+                        updateZoomDisplay();
+                    }
+                    
+                    function updateZoomDisplay() {
+                        document.getElementById('zoomed-img-2').style.transform = `scale(${currentZoom})`;
+                        document.getElementById('zoom-text').innerText = Math.round(currentZoom * 100) + '%';
+                    }
+                </script>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 4: Assembly Components -->
+            <section class="slide">
+                <div class="slide-content">
+                    <div class="badge">OHE STRUCTURAL ELEMENTS </div>
+                    <h2 class="section-title">Assembly Components </h2>
+                    <ul class="feature-list">
+                        <li>
+                            <strong>Stay Tube </strong>
+                            <span>Comprises of a dia 38 mm tube and an adjuster to keep the bracket tube in position, insulated by a stay arm insulator. </span>
+                        </li>
+                        <li>
+                            <strong>Bracket tube </strong>
+                            <span>Comprises of a dia 49 mm tube. Catenary is supported from this member by the catenary suspension bracket and clamp. </span>
+                        </li>
+                        <li>
+                            <strong>Register Arm </strong>
+                            <span>Comprises of a dia 38 mm tube to register the contact wire in the desired position with the help of the Steady arm. </span>
+                        </li>
+                        <li>
+                            <strong>STEADY ARM ASSEMBLY </strong>
+                            <span>Made of Al alloy to register the contact wire to the required stagger and take the push up; it is always in tension. </span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           <!-- Slide 2: OHE Specifications -->
+            <section class="slide">
+                <div class="slide-content">
+                    <h2 class="section-title">OHE (Overhead Equipment) Specifications </h2>
+                    
+                    
+                    <!-- Modified container to stack cards vertically -->
+                    <div class="cards-layout" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        
+                        <!-- Professional horizontal card with bullet points -->
+                        <div class="glass-card" style="text-align: left; padding: 1.5rem; width: 100%; box-sizing: border-box;">
+                            <h3 style="margin-top: 0; margin-bottom: 0.75rem;">Messenger Wire/Catenary wire </h3>
+                            <ul style="margin: 0; padding-left: 1.5rem;">
+                                <li>Made of copper cadmium alloy of 19 strands each of 2.10 mm diameter, representing a total cross section of about 65 mm2. </li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card" style="text-align: left; padding: 1.5rem; width: 100%; box-sizing: border-box;">
+                            <h3 style="margin-top: 0; margin-bottom: 0.75rem;">Contact Wire </h3>
+                            <ul style="margin: 0; padding-left: 1.5rem;">
+                                <li>Hard drawn grooved copper contact wire with flat bottom of 150 mm2 cross-section. </li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card" style="text-align: left; padding: 1.5rem; width: 100%; box-sizing: border-box;">
+                            <h3 style="margin-top: 0; margin-bottom: 0.75rem;">Clearance & Connections </h3>
+                            <ul style="margin: 0; padding-left: 1.5rem;">
+                                <li style="margin-bottom: 0.5rem;">The minimum height of contact wire at support is 5.00m for regulated OHE & 5.20m for depots and inspection pits. </li>
+                                <li>The single-phase AC 25KV high voltage connects to the primary winding of the main transformer through the VCB via the pantograph. </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: RETURN CONDUCTOR & OPC -->
+            <section class="slide">
+                <div class="slide-content">
+                    <h2 class="section-title">RETURN CONDUCTOR & OPC </h2>
+                    <p class="section-subtitle">Conductor systems and induction minimization mechanisms. </p>
+                    
+                    <div class="cards-layout" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        
+                        <div class="glass-card" style="text-align: left; padding: 1.5rem; width: 100%; box-sizing: border-box;">
+                            <h3 style="margin-top: 0; margin-bottom: 0.75rem;">RETURN CONDUCTOR </h3>
+                            <ul style="margin: 0; padding-left: 1.5rem;">
+                                <li>All aluminium conductor consisting of 19 strands each of 3.99 mm diameter, with a nominal cross section of 233 sq.mm. </li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card" style="text-align: left; padding: 1.5rem; width: 100%; box-sizing: border-box;">
+                           
+                            <ul style="margin: 0; padding-left: 1.5rem;">
+                                <li>To minimize Electro magnetic induction on nearby telecom utilities, the BT/RC system is used. </li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card" style="text-align: left; padding: 1.5rem; width: 100%; box-sizing: border-box;">
+                            <h3 style="margin-top: 0; margin-bottom: 0.75rem;">OPC </h3>
+                            <ul style="margin: 0; padding-left: 1.5rem;">
+                                <li>An ACSR conductor, consisting of 7 Steel wires and 12 Aluminium wires (each 2.5mm diameter), with a nominal cross section of 93.3 Sq.mm. </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide: Section Cover - Power Supply System -->
+<section class="slide" style="background-color: #ffffff;">
+    <div class="slide-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; text-align: center; padding: 0 20px;">
+        
+        <!-- Premium Dark Card Container -->
+        <div style="position: relative; background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%); padding: 5rem 7rem; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); border: 1px solid #1e3a5f; max-width: 900px; width: 100%; overflow: hidden; z-index: 1;">
+            
+            <!-- Decorative Ambient Glow (Top Left) - Aqua -->
+            <div style="position: absolute; top: -50px; left: -50px; width: 250px; height: 250px; background: #00FFFF; filter: blur(120px); opacity: 0.25; z-index: -1;"></div>
+            
+            <!-- Decorative Ambient Glow (Bottom Right) - Deep Cyan -->
+            <div style="position: absolute; bottom: -50px; right: -50px; width: 250px; height: 250px; background: #00BFFF; filter: blur(120px); opacity: 0.20; z-index: -1;"></div>
+
+            <!-- Badge -->
+            <div style="display: inline-block; background: rgba(0, 255, 255, 0.15); border: 1px solid rgba(0, 255, 255, 0.4); color: #00FFFF; padding: 8px 24px; border-radius: 50px; font-size: 1rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 2rem; text-transform: uppercase; box-shadow: 0 4px 15px rgba(0, 255, 255, 0.1);">
+                System Module
+            </div>
+            
+            <!-- Main Title -->
+            <h1 class="section-title" style="font-size: 4.8rem; margin: 0; color: #ffffff; letter-spacing: 2px; font-weight: 800; text-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);">
+                Train Power Supply System
+            </h1>
+            
+            <!-- Decorative Divider (Aqua Gradient) -->
+            <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin: 2.5rem 0;">
+                <div style="height: 2px; width: 60px; background: linear-gradient(90deg, transparent, #00FFFF);"></div>
+                <div style="width: 8px; height: 8px; background-color: #00FFFF; border-radius: 50%; box-shadow: 0 0 12px #00FFFF;"></div>
+                <div style="height: 2px; width: 60px; background: linear-gradient(270deg, transparent, #00FFFF);"></div>
+            </div>
+            
+            <!-- Subtitle -->
+            <h2 class="section-subtitle" style="font-size: 2.2rem; margin: 0; color: #e2e8f0; letter-spacing: 1px; font-weight: 400;">
+                Overview & Categorization
+            </h2>
+        </div>
+        
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Slide: Power Supply System Overview -->
+            <section class="slide">
+                <div class="slide-content split-layout">
+                    <div class="split-text">
+                        <h2 class="section-title">Power Supply System Overview</h2>
+                        <p class="section-subtitle">4 secondary windings of MTr are connected to 4 Converter circuits, and 1 tertiary winding of MTr is connected to SIV.</p>
+                        
+                        <ul class="feature-list">
+                            <li>
+                                <strong>Current Collection System</strong>
+                                <span>Responsible for safely collecting 25KV electrical energy from OHE & transmitting it to other systems.</span>
+                            </li>
+                            <li>
+                                <strong>Propulsion System</strong>
+                                <span>Responsible for generating VVVF (Variable Voltage Variable Frequency) for controlling Train Speed.</span>
+                            </li>
+                            <li>
+                                <strong>Auxiliary Power System</strong>
+                                <span>Responsible for generating different power supplies for Auxiliary loads of the train.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Right Side Image Container -->
+                    <div class="split-visual" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/4a.jpg" 
+                             alt="Power Supply System Overview" 
+                             style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); cursor: zoom-in;" 
+                             onclick="openZoom5()">
+                    </div>
+                </div>
+
+                <!-- Fullscreen Zoom Overlay for Slide 5 -->
+                <div id="zoom-overlay-5" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 9999; flex-direction: column;">
+                    
+                    <!-- Image Container -->
+                    <div style="flex-grow: 1; width: 100vw; display: flex; align-items: center; justify-content: center; overflow: auto; padding-top: 20px;">
+                        <img id="zoomed-img-5" src="assets/4a.jpg" alt="Power Supply Zoomed" style="max-height: 100%; max-width: 100%; object-fit: contain; transform: scale(1); transition: transform 0.25s ease; transform-origin: center center;">
+                    </div>
+
+                    <!-- Transparent Navigation Bar -->
+                    <div style="width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; gap: 20px; background: transparent;">
+                        <button onclick="adjustZoom5(-0.25)" style="background: none; border: none; color: white; font-size: 32px; cursor: pointer; padding: 0 10px; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">−</button>
+                        <span id="zoom-text-5" style="color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; min-width: 55px; text-align: center; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">100%</span>
+                        <button onclick="adjustZoom5(0.25)" style="background: none; border: none; color: white; font-size: 30px; cursor: pointer; padding: 0 10px; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">+</button>
+                        <div style="width: 2px; height: 24px; background: rgba(255,255,255,0.5); box-shadow: 0 2px 10px rgba(0,0,0,0.8); margin: 0 10px;"></div>
+                        <button onclick="closeZoom5()" style="background: none; border: none; color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; padding: 0 10px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">Close</button>
+                    </div>
+                </div>
+
+                <!-- Zoom Logic Script -->
+                <script>
+                    let currentZoom5 = 1;
+                    
+                    function openZoom5() {
+                        document.getElementById('zoom-overlay-5').style.display = 'flex';
+                        currentZoom5 = 1;
+                        updateZoomDisplay5();
+                    }
+                    
+                    function closeZoom5() {
+                        document.getElementById('zoom-overlay-5').style.display = 'none';
+                    }
+                    
+                    function adjustZoom5(amount) {
+                        currentZoom5 += amount;
+                        if (currentZoom5 < 0.5) currentZoom5 = 0.5;
+                        if (currentZoom5 > 4) currentZoom5 = 4;
+                        updateZoomDisplay5();
+                    }
+                    
+                    function updateZoomDisplay5() {
+                        document.getElementById('zoomed-img-5').style.transform = `scale(${currentZoom5})`;
+                        document.getElementById('zoom-text-5').innerText = Math.round(currentZoom5 * 100) + '%';
+                    }
+                </script>
+            </section>
+
+            <!-- Slide: Full Page Image -->
+            <section class="slide" style="padding: 0;">
+                <div class="slide-content" style="max-width: 100%; height: 100%; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center;">
+                    <img src="assets/ps.jpg" 
+                         alt="Full Page Diagram" 
+                         style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           <!-- Slide 6: Current Collection System -->
+            <section class="slide">
+                <div class="slide-content" style="max-width: 1000px; margin: 0; padding-left: 5vw; padding-top: 1rem; padding-bottom: 1rem; text-align: left;">
+                    <div class="badge" style="margin-bottom: 0.3rem;">SYSTEM ARCHITECTURE </div>
+                    <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 0.3rem;">Current Collection System </h2>
+                    <p class="section-subtitle" style="font-size: 1.15rem; margin-bottom: 0.8rem; max-width: 800px;">This system deals with the power supply coming from the overhead Catenary to the return current and grounding system in the train. </p>
+                    
+                    <h3 style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.8);">Key Equipments</h3>
+                    
+                    <!-- Vertical Stacked List with Left Alignment and Larger Font -->
+                    <ul style="display: flex; flex-direction: column; gap: 0.4rem; list-style: none; padding: 0; margin: 0; max-width: 800px;">
+                        <li style="background: rgba(255, 255, 255, 0.05); padding: 0.6rem 1.2rem; border-radius: 6px; border-left: 4px solid #3b82f6; font-weight: 500; font-size: 1.1rem;">Pantograph</li>
+                        <li style="background: rgba(255, 255, 255, 0.05); padding: 0.6rem 1.2rem; border-radius: 6px; border-left: 4px solid #3b82f6; font-weight: 500; font-size: 1.1rem;">Potential transformer [PT]</li>
+                        <li style="background: rgba(255, 255, 255, 0.05); padding: 0.6rem 1.2rem; border-radius: 6px; border-left: 4px solid #3b82f6; font-weight: 500; font-size: 1.1rem;">Vacuum circuit breaker [VCB]</li>
+                        <li style="background: rgba(255, 255, 255, 0.05); padding: 0.6rem 1.2rem; border-radius: 6px; border-left: 4px solid #3b82f6; font-weight: 500; font-size: 1.1rem;">Emergency ground switch [EGS]</li>
+                        <li style="background: rgba(255, 255, 255, 0.05); padding: 0.6rem 1.2rem; border-radius: 6px; border-left: 4px solid #3b82f6; font-weight: 500; font-size: 1.1rem;">Lightning arrester [LA]</li>
+                        <li style="background: rgba(255, 255, 255, 0.05); padding: 0.6rem 1.2rem; border-radius: 6px; border-left: 4px solid #3b82f6; font-weight: 500; font-size: 1.1rem;">Current transformer [CT]</li>
+                        <li style="background: rgba(255, 255, 255, 0.05); padding: 0.6rem 1.2rem; border-radius: 6px; border-left: 4px solid #3b82f6; font-weight: 500; font-size: 1.1rem;">Main transformer [MT]</li>
+                    </ul>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Slide 7: Pantograph Assembly -->
+            <section class="slide">
+                <div class="slide-content split-layout">
+                    <div class="split-text">
+                        <div class="badge">CURRENT COLLECTION </div>
+                        <h2 class="section-title">Pantograph Assembly </h2>
+                        <p class="section-subtitle">The pantograph collects current from the over head Catenary system (OHE). It is securely mounted on the roof of T car. </p>
+                        
+                        <ul class="feature-list">
+                            <li>
+                                <strong>Type </strong>
+                                <span>It is a single arm direct air operated type, with two metalized carbon strip pan heads. </span>
+                            </li>
+                            <li>
+                                <strong>Mechanical Structure </strong>
+                                <span>Includes Frame, Hinged system (Lower/Upper arm, rods), Balancing system, Collector head, and Pneumatic control unit. </span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Right Side Image Container -->
+                    <div class="split-visual" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/pa.jpg" 
+                             alt="Pantograph Assembly" 
+                             style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); cursor: zoom-in;" 
+                             onclick="openZoom7()">
+                    </div>
+                </div>
+
+                <!-- Fullscreen Zoom Overlay for Slide 7 -->
+                <div id="zoom-overlay-7" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 9999; flex-direction: column;">
+                    
+                    <!-- Image Container -->
+                    <div style="flex-grow: 1; width: 100vw; display: flex; align-items: center; justify-content: center; overflow: auto; padding-top: 20px;">
+                        <img id="zoomed-img-7" src="assets/pa.jpg" alt="Pantograph Zoomed" style="max-height: 100%; max-width: 100%; object-fit: contain; transform: scale(1); transition: transform 0.25s ease; transform-origin: center center;">
+                    </div>
+
+                    <!-- Transparent Navigation Bar -->
+                    <div style="width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; gap: 20px; background: transparent;">
+                        <button onclick="adjustZoom7(-0.25)" style="background: none; border: none; color: white; font-size: 32px; cursor: pointer; padding: 0 10px; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">−</button>
+                        <span id="zoom-text-7" style="color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; min-width: 55px; text-align: center; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">100%</span>
+                        <button onclick="adjustZoom7(0.25)" style="background: none; border: none; color: white; font-size: 30px; cursor: pointer; padding: 0 10px; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">+</button>
+                        <div style="width: 2px; height: 24px; background: rgba(255,255,255,0.5); box-shadow: 0 2px 10px rgba(0,0,0,0.8); margin: 0 10px;"></div>
+                        <button onclick="closeZoom7()" style="background: none; border: none; color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; padding: 0 10px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">Close</button>
+                    </div>
+                </div>
+
+                <!-- Zoom Logic Script for Slide 7 -->
+                <script>
+                    let currentZoom7 = 1;
+                    
+                    function openZoom7() {
+                        document.getElementById('zoom-overlay-7').style.display = 'flex';
+                        currentZoom7 = 1;
+                        updateZoomDisplay7();
+                    }
+                    
+                    function closeZoom7() {
+                        document.getElementById('zoom-overlay-7').style.display = 'none';
+                    }
+                    
+                    function adjustZoom7(amount) {
+                        currentZoom7 += amount;
+                        if (currentZoom7 < 0.5) currentZoom7 = 0.5;
+                        if (currentZoom7 > 4) currentZoom7 = 4;
+                        updateZoomDisplay7();
+                    }
+                    
+                    function updateZoomDisplay7() {
+                        document.getElementById('zoomed-img-7').style.transform = `scale(${currentZoom7})`;
+                        document.getElementById('zoom-text-7').innerText = Math.round(currentZoom7 * 100) + '%';
+                    }
+                </script>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Slide: Potential Transformer [PT] -->
+            <section class="slide">
+                <div class="slide-content split-layout">
+                    <div class="split-text">
+                        <div class="badge">MEASUREMENT SYSTEM </div>
+                        <h2 class="section-title">Potential Transformer [PT] </h2>
+                        <p class="section-subtitle">A critical measuring component utilized for high-voltage monitoring. </p>
+                        <ul class="feature-list">
+                            <li>
+                                <strong>Function & Voltage Step-Down </strong>
+                                <span>Used to step down and accurately measure the high-voltage 25 kV Catenary line down to a safe secondary voltage of 92 V. </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="split-visual" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/pt.jpg" alt="Potential Transformer" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); cursor: zoom-in;" onclick="openZoomPT()">
+                    </div>
+                </div>
+
+                <div id="zoom-overlay-pt" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 9999; flex-direction: column;">
+                    <div style="flex-grow: 1; width: 100vw; display: flex; align-items: center; justify-content: center; overflow: auto; padding-top: 20px;">
+                        <img id="zoomed-img-pt" src="assets/pt.jpg" alt="PT Zoomed" style="max-height: 100%; max-width: 100%; object-fit: contain; transform: scale(1); transition: transform 0.25s ease;">
+                    </div>
+                    <div style="width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; gap: 20px; background: transparent;">
+                        <button onclick="adjustZoomPT(-0.25)" style="background: none; border: none; color: white; font-size: 32px; cursor: pointer;">−</button>
+                        <span id="zoom-text-pt" style="color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; min-width: 55px; text-align: center;">100%</span>
+                        <button onclick="adjustZoomPT(0.25)" style="background: none; border: none; color: white; font-size: 30px; cursor: pointer;">+</button>
+                        <div style="width: 2px; height: 24px; background: rgba(255,255,255,0.5);"></div>
+                        <button onclick="closeZoomPT()" style="background: none; border: none; color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; text-transform: uppercase;">Close</button>
+                    </div>
+                </div>
+                <script>
+                    let zoomPT = 1;
+                    function openZoomPT() { document.getElementById('zoom-overlay-pt').style.display = 'flex'; zoomPT = 1; updateZoomPT(); }
+                    function closeZoomPT() { document.getElementById('zoom-overlay-pt').style.display = 'none'; }
+                    function adjustZoomPT(amt) { zoomPT = Math.max(0.5, Math.min(4, zoomPT + amt)); updateZoomPT(); }
+                    function updateZoomPT() {
+                        document.getElementById('zoomed-img-pt').style.transform = `scale(${zoomPT})`;
+                        document.getElementById('zoom-text-pt').innerText = Math.round(zoomPT * 100) + '%';
+                    }
+                </script>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide: Vacuum Circuit Breaker [VCB] -->
+            <section class="slide">
+                <div class="slide-content split-layout">
+                    <div class="split-text">
+                        <div class="badge">PROTECTION & ISOLATION</div>
+                        <h2 class="section-title">Vacuum Circuit Breaker [VCB]</h2>
+                        <p class="section-subtitle">High-speed switching element for circuit protection.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <strong>Operational Role</strong>
+                                <span>A single pole, bi-directional high-speed AC circuit breaker used to isolate or connect the 25 kV line to train equipment.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Reduced display size by changing max-width and adding a smaller constraint -->
+                    <div class="split-visual" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/vcb.jpg" alt="VCB" style="max-width: 70%; max-height: 500px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); cursor: zoom-in;" onclick="openZoomVCB()">
+                    </div>
+                </div>
+
+                <div id="zoom-overlay-vcb" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 9999; flex-direction: column;">
+                    <div style="flex-grow: 1; width: 100vw; display: flex; align-items: center; justify-content: center; overflow: auto; padding-top: 20px;">
+                        <img id="zoomed-img-vcb" src="assets/vcb.jpg" alt="VCB Zoomed" style="max-height: 100%; max-width: 100%; object-fit: contain; transform: scale(1); transition: transform 0.25s ease;">
+                    </div>
+                    <div style="width: 50%; height: 80px; display: flex; align-items: center; justify-content: center; gap: 20px; background: transparent;">
+                        <button onclick="adjustZoomVCB(-0.25)" style="background: none; border: none; color: white; font-size: 32px; cursor: pointer;">−</button>
+                        <span id="zoom-text-vcb" style="color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; min-width: 55px; text-align: center;">100%</span>
+                        <button onclick="adjustZoomVCB(0.25)" style="background: none; border: none; color: white; font-size: 30px; cursor: pointer;">+</button>
+                        <div style="width: 2px; height: 24px; background: rgba(255,255,255,0.5);"></div>
+                        <button onclick="closeZoomVCB()" style="background: none; border: none; color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; text-transform: uppercase;">Close</button>
+                    </div>
+                </div>
+                <script>
+                    let zoomVCB = 1;
+                    function openZoomVCB() { document.getElementById('zoom-overlay-vcb').style.display = 'flex'; zoomVCB = 1; updateZoomVCB(); }
+                    function closeZoomVCB() { document.getElementById('zoom-overlay-vcb').style.display = 'none'; }
+                    function adjustZoomVCB(amt) { zoomVCB = Math.max(0.5, Math.min(4, zoomVCB + amt)); updateZoomVCB(); }
+                    function updateZoomVCB() {
+                        document.getElementById('zoomed-img-vcb').style.transform = `scale(${zoomVCB})`;
+                        document.getElementById('zoom-text-vcb').innerText = Math.round(zoomVCB * 100) + '%';
+                    }
+                </script>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Slide: Emergency Ground Switch [EGS] -->
+            <section class="slide">
+                <div class="slide-content split-layout">
+                    <div class="split-text">
+                        <div class="badge">SAFETY & MAINTENANCE </div>
+                        <h2 class="section-title">Emergency Ground Switch [EGS] </h2>
+                        <p class="section-subtitle">Manual high-voltage grounding for maintenance safety. </p>
+                        <ul class="feature-list">
+                            <li>
+                                <strong>Purpose & Operation </strong>
+                                <span>A manually operated High Voltage switch used for earthing the roof equipment and the Main Transformer primary winding. </span>
+                            </li>
+                            <li>
+                                <strong>Safety Protocol </strong>
+                                <span>For maintenance personnel safety, the VCB can be safely earthed at both ends by manual operation of the earthing switch. </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="split-visual" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/egs.jpg" alt="EGS" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); cursor: zoom-in;" onclick="openZoomEGS()">
+                    </div>
+                </div>
+
+                <div id="zoom-overlay-egs" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 9999; flex-direction: column;">
+                    <div style="flex-grow: 1; width: 100vw; display: flex; align-items: center; justify-content: center; overflow: auto; padding-top: 20px;">
+                        <img id="zoomed-img-egs" src="assets/egs.jpg" alt="EGS Zoomed" style="max-height: 200%; max-width: 200%; object-fit: contain; transform: scale(1); transition: transform 0.25s ease;">
+                    </div>
+                    <div style="width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; gap: 20px; background: transparent;">
+                        <button onclick="adjustZoomEGS(-0.25)" style="background: none; border: none; color: white; font-size: 32px; cursor: pointer;">−</button>
+                        <span id="zoom-text-egs" style="color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; min-width: 55px; text-align: center;">100%</span>
+                        <button onclick="adjustZoomEGS(0.25)" style="background: none; border: none; color: white; font-size: 30px; cursor: pointer;">+</button>
+                        <div style="width: 2px; height: 24px; background: rgba(255,255,255,0.5);"></div>
+                        <button onclick="closeZoomEGS()" style="background: none; border: none; color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; text-transform: uppercase;">Close</button>
+                    </div>
+                </div>
+                <script>
+                    let zoomEGS = 1;
+                    function openZoomEGS() { document.getElementById('zoom-overlay-egs').style.display = 'flex'; zoomEGS = 1; updateZoomEGS(); }
+                    function closeZoomEGS() { document.getElementById('zoom-overlay-egs').style.display = 'none'; }
+                    function adjustZoomEGS(amt) { zoomEGS = Math.max(0.5, Math.min(4, zoomEGS + amt)); updateZoomEGS(); }
+                    function updateZoomEGS() {
+                        document.getElementById('zoomed-img-egs').style.transform = `scale(${zoomEGS})`;
+                        document.getElementById('zoom-text-egs').innerText = Math.round(zoomEGS * 100) + '%';
+                    }
+                </script>
+            </section>
+
+
+
+
+
+
+
+
+
+
+<!-- Slide: Lightning Arrester [LA] -->
+            <section class="slide">
+                <div class="slide-content split-layout">
+                    <div class="split-text">
+                        <div class="badge">EQUIPMENT PROTECTION</div>
+                        <h2 class="section-title">Lightning Arrester [LA]</h2>
+                        <p class="section-subtitle">Surge protection for high-tension systems.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <strong>Surge Suppression</strong>
+                                <span>Protects High Tension Equipment from excessive High Voltage transients due to lightning strikes or internal switching surges (connected on both sides of VCB).</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Direct Explicit Sizing Approach: Change the height value (e.g., 450px) to manually scale the image size up or down -->
+                    <div class="split-visual" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/la.jpg" alt="Lightning Arrester" style="height: 450px; width: auto; max-width: 100%; object-fit: contain; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); cursor: zoom-in;" onclick="openZoomLA()">
+                    </div>
+                </div>
+
+                <div id="zoom-overlay-la" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 9999; flex-direction: column;">
+                    <div style="flex-grow: 1; width: 100vw; display: flex; align-items: center; justify-content: center; overflow: auto; padding-top: 20px;">
+                        <img id="zoomed-img-la" src="assets/la.jpg" alt="LA Zoomed" style="max-height: 100%; max-width: 100%; object-fit: contain; transform: scale(1); transition: transform 0.25s ease;">
+                    </div>
+                    <div style="width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; gap: 20px; background: transparent;">
+                        <button onclick="adjustZoomLA(-0.25)" style="background: none; border: none; color: white; font-size: 32px; cursor: pointer;">−</button>
+                        <span id="zoom-text-la" style="color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; min-width: 55px; text-align: center;">100%</span>
+                        <button onclick="adjustZoomLA(0.25)" style="background: none; border: none; color: white; font-size: 30px; cursor: pointer;">+</button>
+                        <div style="width: 2px; height: 24px; background: rgba(255,255,255,0.5);"></div>
+                        <button onclick="closeZoomLA()" style="background: none; border: none; color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; text-transform: uppercase;">Close</button>
+                    </div>
+                </div>
+                <script>
+                    let zoomLA = 1;
+                    function openZoomLA() { document.getElementById('zoom-overlay-la').style.display = 'flex'; zoomLA = 1; updateZoomLA(); }
+                    function closeZoomLA() { document.getElementById('zoom-overlay-la').style.display = 'none'; }
+                    function adjustZoomLA(amt) { zoomLA = Math.max(0.5, Math.min(4, zoomLA + amt)); updateZoomLA(); }
+                    function updateZoomLA() {
+                        document.getElementById('zoomed-img-la').style.transform = `scale(${zoomLA})`;
+                        document.getElementById('zoom-text-la').innerText = Math.round(zoomLA * 100) + '%';
+                    }
+                </script>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Slide: Current Transformer [CT] -->
+            <section class="slide">
+                <div class="slide-content split-layout">
+                    <div class="split-text">
+                        <div class="badge">PROTECTION & MEASUREMENT</div>
+                        <h2 class="section-title">Current Transformer [CT]</h2>
+                        <p class="section-subtitle">Primary current evaluation and fault protection.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <strong>Measurement & Protection</strong>
+                                <span>Measures the primary current drawn by the Main Transformer, providing protection from overcurrent conditions (ACOCR).</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="split-visual" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/ct.jpg" alt="Current Transformer" style="height: 300px; width: auto; max-width: 100%; object-fit: contain; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); cursor: zoom-in;" onclick="openZoomCT()">
+                    </div>
+                </div>
+
+                <div id="zoom-overlay-ct" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 9999; flex-direction: column;">
+                    <div style="flex-grow: 1; width: 100vw; display: flex; align-items: center; justify-content: center; overflow: auto; padding-top: 20px;">
+                        <img id="zoomed-img-ct" src="assets/ct.jpg" alt="CT Zoomed" style="max-height: 80%; max-width: 100%; object-fit: contain; transform: scale(1); transition: transform 0.25s ease;">
+                    </div>
+                    <div style="width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; gap: 20px; background: transparent;">
+                        <button onclick="adjustZoomCT(-0.25)" style="background: none; border: none; color: white; font-size: 32px; cursor: pointer;">−</button>
+                        <span id="zoom-text-ct" style="color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; min-width: 55px; text-align: center;">100%</span>
+                        <button onclick="adjustZoomCT(0.25)" style="background: none; border: none; color: white; font-size: 30px; cursor: pointer;">+</button>
+                        <div style="width: 2px; height: 24px; background: rgba(255,255,255,0.5);"></div>
+                        <button onclick="closeZoomCT()" style="background: none; border: none; color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; text-transform: uppercase;">Close</button>
+                    </div>
+                </div>
+                <script>
+                    let zoomCT = 1;
+                    function openZoomCT() { document.getElementById('zoom-overlay-ct').style.display = 'flex'; zoomCT = 1; updateZoomCT(); }
+                    function closeZoomCT() { document.getElementById('zoom-overlay-ct').style.display = 'none'; }
+                    function adjustZoomCT(amt) { zoomCT = Math.max(0.5, Math.min(4, zoomCT + amt)); updateZoomCT(); }
+                    function updateZoomCT() {
+                        document.getElementById('zoomed-img-ct').style.transform = `scale(${zoomCT})`;
+                        document.getElementById('zoom-text-ct').innerText = Math.round(zoomCT * 100) + '%';
+                    }
+                </script>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Slide: Main Transformer [MT] -->
+            <section class="slide">
+                <div class="slide-content split-layout">
+                    <div class="split-text">
+                        <div class="badge">POWER CONVERSION </div>
+                        <h2 class="section-title">Main Transformer [MT] </h2>
+                        <p class="section-subtitle">Supplies entire electrical power requirements for train operations, mounted in the underframe of T car .</p>
+                        <ul class="feature-list">
+                            <li>
+                                <strong>Voltage Step-Down </strong>
+                                <span>Steps down the 25 kV / 22.5 kV Catenary supply to power traction and auxiliary circuits. </span>
+                            </li>
+                            <li>
+                                <strong>Traction & Auxiliary Output </strong>
+                                <span>Provides 960 / 864V AC for traction and 373/336V AC for the Static Inverter (SIV). </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="split-visual" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/mt.jpg" alt="Main Transformer" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); cursor: zoom-in;" onclick="openZoomMT()">
+                    </div>
+                </div>
+
+                <div id="zoom-overlay-mt" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 9999; flex-direction: column;">
+                    <div style="flex-grow: 1; width: 100vw; display: flex; align-items: center; justify-content: center; overflow: auto; padding-top: 20px;">
+                        <img id="zoomed-img-mt" src="assets/mt.jpg" alt="MT Zoomed" style="max-height: 100%; max-width: 100%; object-fit: contain; transform: scale(1); transition: transform 0.25s ease;">
+                    </div>
+                    <div style="width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; gap: 20px; background: transparent;">
+                        <button onclick="adjustZoomMT(-0.25)" style="background: none; border: none; color: white; font-size: 32px; cursor: pointer;">−</button>
+                        <span id="zoom-text-mt" style="color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; min-width: 55px; text-align: center;">100%</span>
+                        <button onclick="adjustZoomMT(0.25)" style="background: none; border: none; color: white; font-size: 30px; cursor: pointer;">+</button>
+                        <div style="width: 2px; height: 24px; background: rgba(255,255,255,0.5);"></div>
+                        <button onclick="closeZoomMT()" style="background: none; border: none; color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; text-transform: uppercase;">Close</button>
+                    </div>
+                </div>
+                <script>
+                    let zoomMT = 1;
+                    function openZoomMT() { document.getElementById('zoom-overlay-mt').style.display = 'flex'; zoomMT = 1; updateZoomMT(); }
+                    function closeZoomMT() { document.getElementById('zoom-overlay-mt').style.display = 'none'; }
+                    function adjustZoomMT(amt) { zoomMT = Math.max(0.5, Math.min(4, zoomMT + amt)); updateZoomMT(); }
+                    function updateZoomMT() {
+                        document.getElementById('zoomed-img-mt').style.transform = `scale(${zoomMT})`;
+                        document.getElementById('zoom-text-mt').innerText = Math.round(zoomMT * 100) + '%';
+                    }
+                </script>
+            </section>
+
+
+
+
+
+<!-- Slide 12: Propulsion System - Traction Motor -->
+            <section class="slide">
+                <div class="slide-content split-layout">
+                    <div class="split-text">
+                        <div class="badge">PROPULSION</div>
+                        <h2 class="section-title">Propulsion System - Traction Motor</h2>
+                        <p class="section-subtitle">The Traction Motor (TM) provides the necessary torque to move the train, fitted on the Motor Bogies.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <strong>Motor Type</strong>
+                                <span>TM is a 3-phase squirrel cage asynchronous motor specially designed for metro rolling stock.</span>
+                            </li>
+                            <li>
+                                <strong>Specifications</strong>
+                                <span>250 kW, 4-Pole, self-ventilated type with Class 200 insulation system for excellent heat resistance.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="split-visual" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/tm.jpg" 
+                             alt="Traction Motor" 
+                             style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); cursor: zoom-in;" 
+                             onclick="openZoom12()">
+                    </div>
+                </div>
+
+                <!-- Fullscreen Zoom Overlay for Slide 12 -->
+                <div id="zoom-overlay-12" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 9999; flex-direction: column;">
+                    <div style="flex-grow: 1; width: 100vw; display: flex; align-items: center; justify-content: center; overflow: auto; padding-top: 20px;">
+                        <img id="zoomed-img-12" src="assets/tm.jpg" alt="Traction Motor Zoomed" style="max-height: 100%; max-width: 100%; object-fit: contain; transform: scale(1); transition: transform 0.25s ease;">
+                    </div>
+                    <div style="width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; gap: 20px; background: transparent;">
+                        <button onclick="adjustZoom12(-0.25)" style="background: none; border: none; color: white; font-size: 32px; cursor: pointer; padding: 0 10px; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">−</button>
+                        <span id="zoom-text-12" style="color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; min-width: 55px; text-align: center; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">100%</span>
+                        <button onclick="adjustZoom12(0.25)" style="background: none; border: none; color: white; font-size: 30px; cursor: pointer; padding: 0 10px; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">+</button>
+                        <div style="width: 2px; height: 24px; background: rgba(255,255,255,0.5); box-shadow: 0 2px 10px rgba(0,0,0,0.8); margin: 0 10px;"></div>
+                        <button onclick="closeZoom12()" style="background: none; border: none; color: white; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; padding: 0 10px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">Close</button>
+                    </div>
+                </div>
+
+                <script>
+                    let currentZoom12 = 1;
+                    function openZoom12() { document.getElementById('zoom-overlay-12').style.display = 'flex'; currentZoom12 = 1; updateZoomDisplay12(); }
+                    function closeZoom12() { document.getElementById('zoom-overlay-12').style.display = 'none'; }
+                    function adjustZoom12(amount) {
+                        currentZoom12 += amount;
+                        if (currentZoom12 < 0.5) currentZoom12 = 0.5;
+                        if (currentZoom12 > 4) currentZoom12 = 4;
+                        updateZoomDisplay12();
+                    }
+                    function updateZoomDisplay12() {
+                        document.getElementById('zoomed-img-12').style.transform = `scale(${currentZoom12})`;
+                        document.getElementById('zoom-text-12').innerText = Math.round(currentZoom12 * 100) + '%';
+                    }
+                </script>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========================================== -->
+<!-- SLIDE 13: STATIC INVERTER (SIV)            -->
+<!-- ========================================== -->
+<section class="slide">
+    <div class="slide-content split-layout">
+        
+        <!-- Left Side: Text and Table -->
+        <div class="split-text">
+            <div class="badge">AUXILIARY POWER</div>
+            <h2 class="section-title" style="margin-bottom: 0.5rem;">Static Inverter (SIV)</h2>
+            <h3 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 1.5rem; font-weight: 600;">Purpose & Working Principle</h3>
+            
+            <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.5rem;">
+                The Static Inverter (SIV) functions as a primary component of the train's Auxiliary Power System. It converts single-phase AC power received from the main transformer's tertiary winding into stable AC and DC power supplies required for various train auxiliary loads.
+            </p>
+            
+            <!-- Highlighted Table Container -->
+            <div class="glass-card" style="padding: 0; overflow: hidden; border: 2px solid var(--primary); box-shadow: 0 12px 32px rgba(99, 91, 255, 0.15);">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; text-align: left;">
+                    <thead style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color: #ffffff;">
+                        <tr>
+                            <th style="padding: 1rem; font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px;">Parameter</th>
+                            <th style="padding: 1rem; font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px;">Value</th>
+                            <th style="padding: 1rem; font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px;">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 1px solid var(--border); color: var(--text-main);"><strong>Input Power</strong></td>
+                            <td style="padding: 1rem; border-bottom: 1px solid var(--border);"><span class="badge" style="margin-bottom: 0; padding: 4px 10px;">373 / 336V AC</span></td>
+                            <td style="padding: 1rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Single-phase power from main transformer.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 1px solid var(--border); color: var(--text-main);"><strong>Main Output</strong></td>
+                            <td style="padding: 1rem; border-bottom: 1px solid var(--border);"><span class="badge" style="margin-bottom: 0; padding: 4px 10px;">415V AC (3Φ)</span></td>
+                            <td style="padding: 1rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Constant 50Hz output for auxiliary loads.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 1px solid var(--border); color: var(--text-main);"><strong>Regulation</strong></td>
+                            <td style="padding: 1rem; border-bottom: 1px solid var(--border);"><span class="badge" style="margin-bottom: 0; padding: 4px 10px; background: rgba(0, 212, 255, 0.1); color: var(--accent);">19kV to 27.5kV</span></td>
+                            <td style="padding: 1rem; border-bottom: 1px solid var(--border); color: var(--text-muted);">Controlled despite catenary variations.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; color: var(--text-main);"><strong>Internal Logic</strong></td>
+                            <td style="padding: 1rem;"><span class="badge" style="margin-bottom: 0; padding: 4px 10px; background: rgba(255, 71, 87, 0.1); color: var(--accent-red);">AC ➔ DC ➔ AC</span></td>
+                            <td style="padding: 1rem; color: var(--text-muted);">Converter ➔ Filter Capacitor ➔ Inverter.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Right Side: Flowchart Button Link -->
+        <div class="split-visual" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+            
+            <div class="glass-card centered" style="width: 100%; border: 2px dashed var(--border); padding: 3rem 2rem; background: #fafbfc;">
+                <!-- Icon -->
+                <div class="card-icon" style="background: rgba(0, 212, 255, 0.1); color: var(--accent);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="3" x2="9" y2="21"></line>
+                    </svg>
+                </div>
+                
+                
+               
+                
+                <!-- The Link Button -->
+                <a href="flowchart.html" target="_blank" class="primary-button" style="text-decoration: none; display: inline-block;">
+                    View Flowchart Diagram
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- ========================================== -->
+<!-- SLIDE 15: AUXILIARY POWER AND LOAD         -->
+<!-- ========================================== -->
+<section class="slide">
+    <div class="slide-content">
+        <div class="badge">SYSTEM LOADS</div>
+        <h2 class="section-title">Connected Load Summary</h2>
+        
+        <div class="cards-layout" style="gap: 1.5rem; margin-top: 2rem;">
+            
+            <!-- Card 1: 3-Phase AC -->
+            <div class="glass-card" style="padding: 2rem 1.5rem;">
+                <div class="card-icon" style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">3-Phase AC 415V</h3>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted);">
+                    • HVAC system<br>
+                    • Main Transformer Oil Pump and blower motors<br>
+                    • Air Compressors<br>
+                    • Shore supply / Workshop power
+                </p>
+            </div>
+            
+            <!-- Card 2: 1-Phase AC -->
+            <div class="glass-card" style="padding: 2rem 1.5rem;">
+                <div class="card-icon" style="font-size: 3rem; margin-bottom: 1rem;">🔌</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">1-Phase AC 230V</h3>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted);">
+                    • Cab/saloon passenger USB chargers<br>
+                    • Mobile/laptop socket outlets<br>
+                    • Cleaning equipment
+                </p>
+            </div>
+            
+            <!-- Card 3: DC -->
+            <div class="glass-card" style="padding: 2rem 1.5rem;">
+                <div class="card-icon" style="font-size: 3rem; margin-bottom: 1rem;">🔋</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">DC 110V (BCG)</h3>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted);">
+                    • Train control circuits (TCMS, Signal system)<br>
+                    • Emergency train lighting<br>
+                    • Battery charging (260Ah Ni-Cd battery)
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- ========================================== -->
+<!-- SLIDE 14: BATTERY SYSTEM & BCG             -->
+<!-- ========================================== -->
+<section class="slide">
+    <div class="slide-content" style="max-width: 1200px; margin: 0 auto; padding: 2rem 0;">
+        
+        <div class="badge">DC POWER NETWORK</div>
+        <h2 class="section-title" style="margin-bottom: 0.5rem;">Battery System & Charger (BCG)</h2>
+        <p class="section-subtitle" style="font-size: 1.15rem; max-width: 900px; margin-bottom: 2.5rem; color: var(--text-muted);">
+            Provides emergency power, control network voltage (DC110V), and train startup functionality across the vehicle network.
+        </p>
+
+        <!-- 2x2 Grid Layout for Technical Specs -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+
+            <!-- Box 1: Bus Architecture -->
+            <div class="glass-card" style="padding: 1.8rem; border-left: 4px solid var(--primary);">
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.8rem; color: var(--primary);">DC110V Bus Supply Modes</h3>
+                <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                    The DC power network operates using three primary bus lines: <strong>Permanent Bus</strong>, <strong>Prepared Bus</strong>, and <strong>Negative Bus</strong>.
+                </p>
+            </div>
+
+            <!-- Box 2: Redundancy -->
+            <div class="glass-card" style="padding: 1.8rem; border-left: 4px solid #10b981;">
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.8rem; color: #10b981;">BCG Redundancy</h3>
+                <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                    One healthy Battery Charger (BCG) can independently support <strong>all vehicle DC110V loads</strong> across the train if a single BCG fails.
+                </p>
+            </div>
+
+            <!-- Box 3: Emergency Backup -->
+            <div class="glass-card" style="padding: 1.8rem; border-left: 4px solid #f59e0b;">
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.8rem; color: #b45309;">Emergency Backup Capability</h3>
+                <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                    In case of a total BCG failure, the battery system guarantees emergency power for <strong>at least 60 minutes</strong> .
+                </p>
+            </div>
+
+            <!-- Box 4: Connected Loads -->
+            <div class="glass-card" style="padding: 1.8rem; border-left: 4px solid var(--accent-red);">
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.8rem; color: var(--accent-red);">Connected Emergency Loads</h3>
+                <ul style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin: 0; padding-left: 1.2rem;">
+                    <li>Emergency & Exterior Lighting</li>
+                    <li>Ventilation Fans</li>
+                    <li>Train Control (TCMS) & ATP/ATO</li>
+                    <li>Passenger Communication System</li>
+                    <li>Propulsion & Brake Controls</li>
+                    <li>Door Control Circuits</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Slide: Section Cover - Air Supply System -->
+<section class="slide" style="background-color: #ffffff;">
+    <div class="slide-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; text-align: center; padding: 0 20px;">
+        
+        <!-- Premium Dark Card Container -->
+        <div style="position: relative; background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%); padding: 5rem 7rem; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); border: 1px solid #1e3a5f; max-width: 900px; width: 100%; overflow: hidden; z-index: 1;">
+            
+            <!-- Decorative Ambient Glow (Top Left) - Aqua -->
+            <div style="position: absolute; top: -50px; left: -50px; width: 250px; height: 250px; background: #00FFFF; filter: blur(120px); opacity: 0.25; z-index: -1;"></div>
+            
+            <!-- Decorative Ambient Glow (Bottom Right) - Deep Cyan -->
+            <div style="position: absolute; bottom: -50px; right: -50px; width: 250px; height: 250px; background: #00BFFF; filter: blur(120px); opacity: 0.20; z-index: -1;"></div>
+
+            <!-- Badge -->
+            <div style="display: inline-block; background: rgba(0, 255, 255, 0.15); border: 1px solid rgba(0, 255, 255, 0.4); color: #00FFFF; padding: 8px 24px; border-radius: 50px; font-size: 1rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 2rem; text-transform: uppercase; box-shadow: 0 4px 15px rgba(0, 255, 255, 0.1);">
+                System Module
+            </div>
+            
+            <!-- Main Title -->
+            <h1 class="section-title" style="font-size: 4.8rem; margin: 0; color: #ffffff; letter-spacing: 2px; font-weight: 800; text-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);">
+                Air Supply System
+            </h1>
+            
+            <!-- Decorative Divider (Aqua Gradient) -->
+            <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin: 2.5rem 0;">
+                <div style="height: 2px; width: 60px; background: linear-gradient(90deg, transparent, #00FFFF);"></div>
+                <div style="width: 8px; height: 8px; background-color: #00FFFF; border-radius: 50%; box-shadow: 0 0 12px #00FFFF;"></div>
+                <div style="height: 2px; width: 60px; background: linear-gradient(270deg, transparent, #00FFFF);"></div>
+            </div>
+            
+            <!-- Subtitle -->
+            <h2 class="section-subtitle" style="font-size: 2.2rem; margin: 0; color: #e2e8f0; letter-spacing: 1px; font-weight: 400;">
+                Overview & Categorization
+            </h2>
+        </div>
+        
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 19: Air Supply System Overview -->
+            <section class="slide" style="background-color: #ffffff; color: #1e293b;">
+                <div class="slide-content" style="max-width: 950px; margin: 0 auto;">
+                    <div class="badge" style="background: rgba(16, 185, 129, 0.15); color: #059669; border: 1px solid #10b981; display: inline-block;">PNEUMATICS</div>
+                    <h2 class="section-title" style="font-size: 2.2rem; margin-top: 0.5rem; margin-bottom: 0.8rem; color: #0f172a;">Air Supply System Overview</h2>
+                    <p class="section-subtitle" style="font-size: 1.2rem; margin-bottom: 2rem; color: #475569;">Key functions, pressure distribution, and component specifications of the train pneumatic layout.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <!-- Horizontal Box 1 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #10b981; padding: 1.2rem 1.5rem; border-radius: 10px; display: flex; flex-direction: column; gap: 0.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            <strong style="font-size: 1.25rem; color: #059669; letter-spacing: 0.5px;">System Function</strong>
+                            <span style="font-size: 1.12rem; color: #334155; line-height: 1.5;">The function of the air supply system is to supply compressed air to the Brake system, Pantographs, Secondary suspension, Horn and Uncoupling Mechanism.</span>
+                        </div>
+
+                        <!-- Horizontal Box 2 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #10b981; padding: 1.2rem 1.5rem; border-radius: 10px; display: flex; flex-direction: column; gap: 0.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            <strong style="font-size: 1.25rem; color: #059669; letter-spacing: 0.5px;">Main Reservoir Pipe (MRP)</strong>
+                            <span style="font-size: 1.12rem; color: #334155; line-height: 1.5;">Compressed air of the right quality, quantity and correct pressure is supplied to the complete train via the main reservoir pipe (MRP).</span>
+                        </div>
+
+                        <!-- Horizontal Box 3 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #10b981; padding: 1.2rem 1.5rem; border-radius: 10px; display: flex; flex-direction: column; gap: 0.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            <strong style="font-size: 1.25rem; color: #059669; letter-spacing: 0.5px;">DT Car Unit Configuration</strong>
+                            <span style="font-size: 1.12rem; color: #334155; line-height: 1.5;">Main air supply unit in Each DT Car consists of compressor, air treatment and filter units.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+<!-- Slide 17: Pneumatic System & Main Air Supply Module -->
+<section class="slide" style="background-color: #ffffff; color: #1e293b;">
+    <div class="slide-content" style="max-width: 950px; margin: 0 auto;">
+        
+        <!-- Badge -->
+        <div class="badge" style="background: rgba(16, 185, 129, 0.15); color: #059669; border: 1px solid #10b981; display: inline-block; padding: 4px 14px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">
+            PNEUMATICS
+        </div>
+        
+        <!-- Title -->
+        <h2 class="section-title" style="font-size: 2rem; margin-top: 0.5rem; margin-bottom: 1rem; color: #0f172a;">
+            Pneumatic System & Main Air Supply Module
+        </h2>
+        
+        <!-- Main Content Box -->
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 5px solid #10b981; padding: 1.2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+
+            <!-- Purpose Highlight Box -->
+            <div style="margin-bottom: 1rem; padding: 8px 12px; background-color: rgba(16, 185, 129, 0.08); border-left: 4px solid #10b981; border-radius: 0 6px 6px 0;">
+                <span style="font-weight: 700; color: #059669; margin-right: 5px;">Purpose:</span> 
+                <span style="color: #334155; font-size: 1.05rem;">To generate, clean, and store high-pressure compressed air required for the train's pneumatic network.</span>
+            </div>
+
+            <!-- Table Container -->
+            <div style="border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+                            <th style="padding: 8px 16px; color: #0f172a; font-weight: 600; width: 12%;">S.No.</th>
+                            <th style="padding: 8px 16px; color: #0f172a; font-weight: 600;">Component Name</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 1.05rem; color: #334155;">
+                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #ffffff;">
+                            <td style="padding: 6px 16px;">1</td>
+                            <td style="padding: 6px 16px; font-weight: 500;">Compressor</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f8fafc;">
+                            <td style="padding: 6px 16px;">2</td>
+                            <td style="padding: 6px 16px; font-weight: 500;">Main reservoir</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #ffffff;">
+                            <td style="padding: 6px 16px;">3</td>
+                            <td style="padding: 6px 16px; font-weight: 500;">Air dryer</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f8fafc;">
+                            <td style="padding: 6px 16px;">4</td>
+                            <td style="padding: 6px 16px; font-weight: 500;">Oil separator</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #ffffff;">
+                            <td style="padding: 6px 16px;">5</td>
+                            <td style="padding: 6px 16px; font-weight: 500;">Valve box</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f8fafc;">
+                            <td style="padding: 6px 16px;">6</td>
+                            <td style="padding: 6px 16px; font-weight: 500;">Auxiliary Control Unit (ACU)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #ffffff;">
+                            <td style="padding: 6px 16px;">7</td>
+                            <td style="padding: 6px 16px; font-weight: 500;">Air suspension reservoir</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f8fafc;">
+                            <td style="padding: 6px 16px;">8</td>
+                            <td style="padding: 6px 16px; font-weight: 500;">Brake reservoir</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 6px 16px;">9</td>
+                            <td style="padding: 6px 16px; font-weight: 500;">Draining cock</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide: Full Page Image with Top-Left Caption -->
+            <section class="slide" style="padding: 0;">
+                <div class="slide-content" style="max-width: 100%; height: 100%; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; position: relative;">
+                    <img src="assets/mam.jpg" 
+                         alt="Main Air Supply Module" 
+                         style="width: 100%; height: 100%; object-fit: contain;">
+                    
+                    <!-- Top Left Caption (Small & Transparent Light Blue with Black Text) -->
+                    <div style="position: absolute; top: 20px; left: 30px; z-index: 10;">
+                        <span style="background: rgba(56, 189, 248, 0.3); color: #000000; padding: 6px 18px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px; border: 1px solid rgba(56, 189, 248, 0.5); backdrop-filter: blur(4px);">
+                            Main Air Supply Module
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+
+
+<!-- Slide: Full Page Image -->
+            <section class="slide" style="padding: 0;">
+                <div class="slide-content" style="max-width: 100%; height: 100%; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; position: relative;">
+                    <img src="assets/mr.jpg" 
+                         alt="Main Air Supply Module" 
+                         style="width: 100%; height: 100%; object-fit: contain;">
+                    
+                    <!-- Top Middle Caption -->
+                    <div style="position: absolute; top: 30px; width: 100%; text-align: center; z-index: 10;">
+                        <span style="background: rgba(0, 0, 0, 0.85); color: #ffffff; padding: 10px 30px; border-radius: 30px; font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px);">
+                            Main Air Supply Module
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+<!-- Slide: Auxiliary Compressor Details -->
+            <section class="slide" style="background-color: #ffffff; color: #1e293b;">
+                <div class="slide-content" style="max-width: 950px; margin: 0 auto;">
+                    <div class="badge" style="background: rgba(16, 185, 129, 0.15); color: #059669; border: 1px solid #10b981; display: inline-block;">PNEUMATICS</div>
+                    <h2 class="section-title" style="font-size: 2.2rem; margin-top: 0.5rem; margin-bottom: 0.8rem; color: #0f172a;">Auxiliary Compressor</h2>
+                    <p class="section-subtitle" style="font-size: 1.2rem; margin-bottom: 2rem; color: #475569;">Dedicated pneumatic support for pantograph deployment and independent operation.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #10b981; padding: 1.5rem 1.8rem; border-radius: 10px; display: flex; flex-direction: column; gap: 0.6rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            <strong style="font-size: 1.35rem; color: #059669; letter-spacing: 0.5px;">Function & Placement</strong>
+                            <span style="font-size: 1.18rem; color: #334155; line-height: 1.6;">T-car has an independent auxiliary air compressor unit specifically to supply air to raise the pantograph.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+<!-- Slide: Full Page Image with Top-Left Caption -->
+            <section class="slide" style="padding: 0;">
+                <div class="slide-content" style="max-width: 100%; height: 100%; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; position: relative;">
+                    <img src="assets/ax2.jpg" 
+                         alt="Auxiliary Air Supply Module" 
+                         style="width: 100%; height: 100%; object-fit: contain;">
+                    
+                    <!-- Top Left Caption (Small & Transparent Light Blue with Black Text) -->
+                    <div style="position: absolute; top: 20px; left: 30px; z-index: 10;">
+                        <span style="background: rgba(56, 189, 248, 0.3); color: #000000; padding: 6px 18px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px; border: 1px solid rgba(56, 189, 248, 0.5); backdrop-filter: blur(4px);">
+                            Auxiliary Air Supply Module
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+
+
+<!-- Slide: Full Page Image -->
+            <section class="slide" style="padding: 0;">
+                <div class="slide-content" style="max-width: 100%; height: 100%; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; position: relative;">
+                    <img src="assets/ax1.jpg" 
+                         alt="Auxiliary Air Supply Module" 
+                         style="width: 100%; height: 100%; object-fit: contain;">
+                    
+                    <!-- Top Middle Caption -->
+                    <div style="position: absolute; top: 30px; width: 100%; text-align: center; z-index: 10;">
+                        <span style="background: rgba(0, 0, 0, 0.85); color: #ffffff; padding: 10px 30px; border-radius: 30px; font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px);">
+                            Auxiliary Air Supply Module
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 20: Pneumatic System - Isolating Cocks & Color Codes -->
+            <section class="slide" style="background-color: #ffffff; color: #1e293b;">
+                <div class="slide-content" style="max-width: 1000px; margin: 0 auto;">
+                    <div class="badge" style="background: rgba(16, 185, 129, 0.15); color: #059669; border: 1px solid #10b981; display: inline-block; margin-bottom: 0.5rem;">PNEUMATICS</div>
+                    <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 0.5rem; color: #0f172a;">Pneumatic System - Isolating Cocks & Color Codes</h2>
+                    <p class="section-subtitle" style="font-size: 1.2rem; margin-bottom: 2rem; color: #475569;">Locations: Cab houses MR and Uncoupling cocks; Saloon houses BIC and PIC.</p>
+                    
+                    <div class="traction-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                        
+                        <!-- White Pipes -->
+                        <div class="traction-stat" style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 5px solid #cbd5e1; border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            <img src="assets/white_pipe.jpg" alt="White Pipes" style="width: 110px; height: 110px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;">
+                            <h4 style="color: #0f172a; font-size: 1.25rem; margin-bottom: 0.5rem;">White pipes/cocks</h4>
+                            <div class="trend" style="color: #334155; font-size: 1.05rem; line-height: 1.5;">Exclusively used for Main Reservoir (MR) and Compressor lines.</div>
+                        </div>
+
+                        <!-- Red Pipes -->
+                        <div class="traction-stat" style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 5px solid #ef4444; border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            <img src="assets/red_pipe.jpg" alt="Red Pipes" style="width: 110px; height: 110px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;">
+                            <h4 style="color: #ef4444; font-size: 1.25rem; margin-bottom: 0.5rem;">Red pipes/cocks</h4>
+                            <div class="trend" style="color: #334155; font-size: 1.05rem; line-height: 1.5;">Assigned to the brake and Drain lines.</div>
+                        </div>
+
+                        <!-- Yellow Pipes -->
+                        <div class="traction-stat" style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 5px solid #eab308; border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            <img src="assets/yellow_pipe.jpg" alt="Yellow Pipes" style="width: 110px; height: 110px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;">
+                            <h4 style="color: #ca8a04; font-size: 1.25rem; margin-bottom: 0.5rem;">Yellow pipes/cocks</h4>
+                            <div class="trend" style="color: #334155; font-size: 1.05rem; line-height: 1.5;">Designated for Air Suspension (AS) and other Auxiliary devices.</div>
+                        </div>
+
+                        <!-- Black Pipes -->
+                        <div class="traction-stat" style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 5px solid #000000; border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            <img src="assets/black_pipe.jpg" alt="Black Pipes" style="width: 110px; height: 110px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;">
+                            <h4 style="color: #000000; font-size: 1.25rem; margin-bottom: 0.5rem;">Black pipes/cocks</h4>
+                            <div class="trend" style="color: #334155; font-size: 1.05rem; line-height: 1.5;">Used solely for Parking brake lines.</div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 21: Section Cover - Brake System -->
+            <section class="slide" style="background-color: #ffffff;">
+                <div class="slide-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center; padding: 0 20px;">
+                    
+                    <!-- Premium Dark Card Container -->
+                    <div style="position: relative; background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%); padding: 5rem 7rem; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); border: 1px solid #334155; max-width: 900px; width: 100%; overflow: hidden; z-index: 1;">
+                        
+                        <!-- Decorative Ambient Glow (Top Left) -->
+                        <div style="position: absolute; top: -50px; left: -50px; width: 250px; height: 250px; background: #10b981; filter: blur(120px); opacity: 0.25; z-index: -1;"></div>
+                        
+                        <!-- Decorative Ambient Glow (Bottom Right) -->
+                        <div style="position: absolute; bottom: -50px; right: -50px; width: 250px; height: 250px; background: #38bdf8; filter: blur(120px); opacity: 0.15; z-index: -1;"></div>
+
+                        <!-- Badge -->
+                        <div style="display: inline-block; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; padding: 8px 24px; border-radius: 50px; font-size: 1rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 2rem; text-transform: uppercase; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            New Section
+                        </div>
+                        
+                        <!-- Main Title -->
+                        <h1 class="section-title" style="font-size: 4.8rem; margin: 0; color: #ffffff; letter-spacing: 2px; font-weight: 800; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+                            Brake System
+                        </h1>
+                        
+                        <!-- Decorative Divider -->
+                        <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin: 2.5rem 0;">
+                            <div style="height: 2px; width: 60px; background: linear-gradient(90deg, transparent, #38bdf8);"></div>
+                            <div style="width: 8px; height: 8px; background-color: #10b981; border-radius: 50%; box-shadow: 0 0 10px #10b981;"></div>
+                            <div style="height: 2px; width: 60px; background: linear-gradient(270deg, transparent, #38bdf8);"></div>
+                        </div>
+                        
+                        <!-- Subtitle -->
+                        <h2 class="section-subtitle" style="font-size: 2.2rem; margin: 0; color: #e2e8f0; letter-spacing: 1px; font-weight: 400;">
+                            Overview & Categorization
+                        </h2>
+                    </div>
+                    
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 22: Brake System - Overview & Categorization -->
+            <section class="slide" style="background-color: #ffffff; color: #1e293b;">
+                <div class="slide-content" style="max-width: 950px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center;">
+                    
+                    <div class="badge" style="background: rgba(56, 189, 248, 0.15); color: #0284c7; border: 1px solid #38bdf8; display: inline-block; margin-bottom: 0.5rem; align-self: flex-start;">BRAKING</div>
+                    <h2 class="section-title" style="font-size: 2.2rem; margin-top: 0; margin-bottom: 0.8rem; color: #0f172a;">Brake System - Overview </h2>
+                    <p class="section-subtitle" style="font-size: 1.2rem; margin-bottom: 2rem; color: #475569;">Features a microprocessor controlled pneumatic single pipe friction brake system with Electro-Pneumatic control.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        
+                        <!-- Box 1 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #38bdf8; padding: 1.2rem 1.5rem; border-radius: 10px; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            <span style="font-size: 1.2rem; font-weight: 700; color: #0284c7; margin-right: 1.5rem;">1.</span>
+                            <span style="font-size: 1.15rem; color: #334155;">To stop a moving train at desired location.</span>
+                        </div>
+
+                        <!-- Box 2 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #38bdf8; padding: 1.2rem 1.5rem; border-radius: 10px; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            <span style="font-size: 1.2rem; font-weight: 700; color: #0284c7; margin-right: 1.5rem;">2.</span>
+                            <span style="font-size: 1.15rem; color: #334155;">To slow down the speed of train.</span>
+                        </div>
+
+                        <!-- Box 3 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #38bdf8; padding: 1.2rem 1.5rem; border-radius: 10px; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            <span style="font-size: 1.2rem; font-weight: 700; color: #0284c7; margin-right: 1.5rem;">3.</span>
+                            <span style="font-size: 1.15rem; color: #334155;">To stop the train to avoid a miss happening in emergency.</span>
+                        </div>
+
+                        <!-- Box 4 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #38bdf8; padding: 1.2rem 1.5rem; border-radius: 10px; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            <span style="font-size: 1.2rem; font-weight: 700; color: #0284c7; margin-right: 1.5rem;">4.</span>
+                            <span style="font-size: 1.15rem; color: #334155;">To stable a vehicle or to prevent its rolling back.</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 23: Brake System Categorization -->
+            <section class="slide" style="background-color: #f8fafc; padding: 0;">
+                <div class="slide-content" style="max-width: 1100px; height: 100%; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    
+                    <!-- Main Centered Content Box -->
+                    <div style="background-color: #ffffff; padding: 3.5rem; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; width: 100%;">
+                        
+                        <!-- Header Area Centered -->
+                        <div style="text-align: center; margin-bottom: 3rem;">
+                            <div class="badge" style="background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; display: inline-block; margin-bottom: 0.8rem; border-radius: 6px; padding: 6px 16px; font-weight: 700; letter-spacing: 1px;">BRAKING</div>
+                            <h2 class="section-title" style="font-size: 2.8rem; margin: 0; color: #0f172a;">Brake System Categorization</h2>
+                        </div>
+
+                        <!-- Section 1: Based on Implementation -->
+                        <div style="margin-bottom: 3.5rem;">
+                            <!-- Centered Light Pill & Symmetrical Dividers -->
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 1.5rem;">
+                                <div style="flex-grow: 1; height: 2px; background: linear-gradient(270deg, #c7d2fe, transparent); border-radius: 2px;"></div>
+                                <div style="background: #e0e7ff; color: #4338ca; padding: 0.6rem 1.5rem; border-radius: 50px; font-size: 1.25rem; font-weight: 700; border: 1px solid #c7d2fe; text-align: center;">
+                                    1. Based on Implementation
+                                </div>
+                                <div style="flex-grow: 1; height: 2px; background: linear-gradient(90deg, #c7d2fe, transparent); border-radius: 2px;"></div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                                <!-- Friction Brake -->
+                                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #818cf8; padding: 1.5rem; border-radius: 12px; display: flex; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                                    <span style="font-size: 1.4rem; font-weight: 800; color: #4f46e5; margin-right: 1.2rem; background: #e0e7ff; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">1</span>
+                                    <span style="font-size: 1.15rem; color: #1e293b; font-weight: 600;">Electro-Pneumatic (Friction) Brake</span>
+                                </div>
+
+                                <!-- ED Brake -->
+                                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #818cf8; padding: 1.5rem; border-radius: 12px; display: flex; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                                    <span style="font-size: 1.4rem; font-weight: 800; color: #4f46e5; margin-right: 1.2rem; background: #e0e7ff; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">2</span>
+                                    <span style="font-size: 1.15rem; color: #1e293b; font-weight: 600;">Electro-Dynamic (Regenerative) Brake</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 2: Based on Application -->
+                        <div>
+                            <!-- Centered Light Pill & Symmetrical Dividers -->
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 1.5rem;">
+                                <div style="flex-grow: 1; height: 2px; background: linear-gradient(270deg, #bae6fd, transparent); border-radius: 2px;"></div>
+                                <div style="background: #e0f2fe; color: #0369a1; padding: 0.6rem 1.5rem; border-radius: 50px; font-size: 1.25rem; font-weight: 700; border: 1px solid #bae6fd; text-align: center;">
+                                    2. Based on Application
+                                </div>
+                                <div style="flex-grow: 1; height: 2px; background: linear-gradient(90deg, #bae6fd, transparent); border-radius: 2px;"></div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                                <!-- Service Brake -->
+                                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #38bdf8; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                                    <strong style="font-size: 1.15rem; color: #0f172a; display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem;">
+                                        <span style="background: #e0f2fe; color: #0284c7; padding: 2px 8px; border-radius: 4px; font-size: 1rem;">i.</span> Service Brake
+                                    </strong>
+                                    <span style="font-size: 1.05rem; color: #475569; line-height: 1.5; display: block;">Blending between friction brake and ED-brake (Load & Jerk corrected, slip Slide Protection).</span>
+                                </div>
+                                
+                                <!-- Emergency Brake -->
+                                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #f87171; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                                    <strong style="font-size: 1.15rem; color: #0f172a; display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem;">
+                                        <span style="background: #fee2e2; color: #dc2626; padding: 2px 8px; border-radius: 4px; font-size: 1rem;">ii.</span> Emergency Brake
+                                    </strong>
+                                    <span style="font-size: 1.05rem; color: #475569; line-height: 1.5; display: block;">EP brake, Load corrected, slip Slide Protection.</span>
+                                </div>
+
+                                <!-- Parking Brake -->
+                                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #fbbf24; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                                    <strong style="font-size: 1.15rem; color: #0f172a; display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem;">
+                                        <span style="background: #fef3c7; color: #d97706; padding: 2px 8px; border-radius: 4px; font-size: 1rem;">iii.</span> Parking Brake
+                                    </strong>
+                                    <span style="font-size: 1.05rem; color: #475569; line-height: 1.5; display: block;">Pressure release-spring actuated.</span>
+                                </div>
+
+                                <!-- Holding Brake -->
+                                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #34d399; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                                    <strong style="font-size: 1.15rem; color: #0f172a; display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem;">
+                                        <span style="background: #d1fae5; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 1rem;">iv.</span> Holding Brake
+                                    </strong>
+                                    <span style="font-size: 1.05rem; color: #475569; line-height: 1.5; display: block;">Comes into effect near Zero speed.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 28: EP Brake Conclusion & Strategic Summary (Concise Text) -->
+            <section class="slide" style="background-color: #ffffff; color: #1e293b;">
+                <div class="slide-content" style="max-width: 1100px; margin: 0 auto; padding: 1rem 0;">
+                    
+                    <!-- Header -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                        <div>
+                            <div class="badge" style="background: rgba(79, 70, 229, 0.15); color: #4338ca; border: 1px solid #6366f1; display: inline-block; margin-bottom: 0.5rem; border-radius: 4px; padding: 4px 12px; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px;">EP BRAKE</div>
+                            <h2 class="section-title" style="font-size: 2.3rem; margin: 0; color: #0f172a;">Electro-Pneumatic (Friction) Brake</h2>
+                        </div>
+                    </div>
+                    
+                    <!-- Vertically Stacked, Horizontally Long Cards -->
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        
+                        <!-- Point 1 -->
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #3b82f6; border-radius: 8px; padding: 0.8rem 1.5rem; display: flex; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: transform 0.2s, box-shadow 0.2s;">
+                            <div style="width: 220px; flex-shrink: 0;">
+                                <strong style="font-size: 1.1rem; color: #0f172a;">System Definition</strong>
+                            </div>
+                            <div style="flex-grow: 1; border-left: 1px solid #cbd5e1; padding-left: 1.5rem;">
+                                <span style="font-size: 1rem; color: #475569; line-height: 1.4; display: block;">An Electro-Pneumatic (EP) brake is a modern train braking system that combines high-speed electronic signal control with compressed air pressure to apply mechanical friction brakes.</span>
+                            </div>
+                        </div>
+
+                        <!-- Point 2 -->
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #0ea5e9; border-radius: 8px; padding: 0.8rem 1.5rem; display: flex; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: transform 0.2s, box-shadow 0.2s;">
+                            <div style="width: 220px; flex-shrink: 0;">
+                                <strong style="font-size: 1.1rem; color: #0f172a;">Instant Response</strong>
+                            </div>
+                            <div style="flex-grow: 1; border-left: 1px solid #cbd5e1; padding-left: 1.5rem;">
+                                <span style="font-size: 1rem; color: #475569; line-height: 1.4; display: block;">Transmits electronic commands instantly across the trainset, eliminating pneumatic propagation delays.</span>
+                            </div>
+                        </div>
+
+                      
+
+                        <!-- Point 4 -->
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #8b5cf6; border-radius: 8px; padding: 0.8rem 1.5rem; display: flex; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: transform 0.2s, box-shadow 0.2s;">
+                            <div style="width: 220px; flex-shrink: 0;">
+                                <strong style="font-size: 1.1rem; color: #0f172a;">Seamless Blending</strong>
+                            </div>
+                            <div style="flex-grow: 1; border-left: 1px solid #cbd5e1; padding-left: 1.5rem;">
+                                <span style="font-size: 1rem; color: #475569; line-height: 1.4; display: block;">Automatically supplements electro-dynamic braking effort during stopping phases or high demand.</span>
+                            </div>
+                        </div>
+
+                        <!-- Point 5 -->
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #6366f1; border-radius: 8px; padding: 0.8rem 1.5rem; display: flex; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: transform 0.2s, box-shadow 0.2s;">
+                            <div style="width: 220px; flex-shrink: 0;">
+                                <strong style="font-size: 1.1rem; color: #0f172a;">Uniform Application</strong>
+                            </div>
+                            <div style="flex-grow: 1; border-left: 1px solid #cbd5e1; padding-left: 1.5rem;">
+                                <span style="font-size: 1rem; color: #475569; line-height: 1.4; display: block;">Ensures simultaneous braking across all cars to minimize coupler stress and maximize passenger comfort.</span>
+                            </div>
+                        </div>
+
+                        <!-- Point 6 -->
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #f59e0b; border-radius: 8px; padding: 0.8rem 1.5rem; display: flex; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: transform 0.2s, box-shadow 0.2s;">
+                            <div style="width: 220px; flex-shrink: 0;">
+                                <strong style="font-size: 1.1rem; color: #0f172a;">Anti-Skid Safeguard</strong>
+                            </div>
+                            <div style="flex-grow: 1; border-left: 1px solid #cbd5e1; padding-left: 1.5rem;">
+                                <span style="font-size: 1rem; color: #475569; line-height: 1.4; display: block;">Direct interface with Wheel Slide Protection (WSP) dynamically adjusts pressure during low adhesion.</span>
+                            </div>
+                        </div>
+
+                                            
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 29: ED Brake Conclusion & Strategic Summary (Concise Text) -->
+            <section class="slide" style="background-color: #ffffff; color: #1e293b;">
+                <div class="slide-content" style="max-width: 1100px; margin: 0 auto; padding: 1rem 0;">
+                    
+                    <!-- Header -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid #f1f5f9; padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                        <div>
+                            <div class="badge" style="background: rgba(14, 165, 233, 0.15); color: #0284c7; border: 1px solid #38bdf8; display: inline-block; margin-bottom: 0.5rem; border-radius: 4px; padding: 4px 12px; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px;">ED BRAKE</div>
+                            <h2 class="section-title" style="font-size: 2.3rem; margin: 0; color: #0f172a;">Electro-Dynamic (Regenerative) Brake</h2>
+                        </div>
+                    </div>
+                    
+                    <!-- Vertically Stacked, Horizontally Long Cards -->
+                    <div style="display: flex; flex-direction: column; gap: 0.9rem;">
+                        
+                        <!-- Point 1 -->
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #3b82f6; border-radius: 8px; padding: 0.8rem 1.5rem; display: flex; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: transform 0.2s, box-shadow 0.2s;">
+                            <div style="width: 220px; flex-shrink: 0;">
+                                <strong style="font-size: 1.1rem; color: #0f172a;">System Definition</strong>
+                            </div>
+                            <div style="flex-grow: 1; border-left: 1px solid #cbd5e1; padding-left: 1.5rem;">
+                                <span style="font-size: 1rem; color: #475569; line-height: 1.4; display: block;">An Electro-Dynamic (ED) brake is a modern regenerative braking system that uses a train's electric traction motors to slow the vehicle down. When braking is requested, the electric motors run in reverse to act as generators, converting the train's kinetic energy into electrical power.</span>
+                            </div>
+                        </div>
+
+                        <!-- Point 2 -->
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #10b981; border-radius: 8px; padding: 0.8rem 1.5rem; display: flex; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: transform 0.2s, box-shadow 0.2s;">
+                            <div style="width: 220px; flex-shrink: 0;">
+                                <strong style="font-size: 1.1rem; color: #0f172a;">Energy Saving</strong>
+                            </div>
+                            <div style="flex-grow: 1; border-left: 1px solid #cbd5e1; padding-left: 1.5rem;">
+                                <span style="font-size: 1rem; color: #475569; line-height: 1.4; display: block;">Regenerated electricity is fed back to the overhead power lines, significantly reducing total power consumption.</span>
+                            </div>
+                        </div>
+
+                        <!-- Point 3 -->
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #8b5cf6; border-radius: 8px; padding: 0.8rem 1.5rem; display: flex; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: transform 0.2s, box-shadow 0.2s;">
+                            <div style="width: 220px; flex-shrink: 0;">
+                                <strong style="font-size: 1.1rem; color: #0f172a;">First Choice</strong>
+                            </div>
+                            <div style="flex-grow: 1; border-left: 1px solid #cbd5e1; padding-left: 1.5rem;">
+                                <span style="font-size: 1rem; color: #475569; line-height: 1.4; display: block;">Serves as the primary deceleration method to minimize wear and extend the lifespan of mechanical friction pads.</span>
+                            </div>
+                        </div>
+
+                       
+                        <!-- Point 5 -->
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #6366f1; border-radius: 8px; padding: 0.8rem 1.5rem; display: flex; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: transform 0.2s, box-shadow 0.2s;">
+                            <div style="width: 220px; flex-shrink: 0;">
+                                <strong style="font-size: 1.1rem; color: #0f172a;">Smart Blending</strong>
+                            </div>
+                            <div style="flex-grow: 1; border-left: 1px solid #cbd5e1; padding-left: 1.5rem;">
+                                <span style="font-size: 1rem; color: #475569; line-height: 1.4; display: block;">Automatically integrates and blends with friction brakes whenever additional stopping force is required.</span>
+                            </div>
+                        </div>
+
+                                               
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 30: Service Brake (Categorized & Table - Blue Theme) -->
+<section class="slide" style="background-color: #ffffff; color: #1e293b; font-family: system-ui, -apple-system, sans-serif;">
+    <div class="slide-content" style="max-width: 1100px; margin: 0 auto; padding: 1rem 0;">
+        
+        <!-- Header Area -->
+        <div style="border-bottom: 2px solid #f1f5f9; padding-bottom: 1.2rem; margin-bottom: 2rem;">
+            
+            <!-- Parent Category Heading -->
+            <h2 style="font-size: 1.6rem; color: #0369a1; margin-top: 0; margin-bottom: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                2. Based on Application
+            </h2>
+            
+            <!-- Sub-Heading (Roman Numeral) -->
+            <h3 class="section-title" style="font-size: 2.4rem; margin: 0 0 0.8rem 0; color: #0f172a; display: flex; align-items: center; gap: 12px;">
+                <span style="background: #e0f2fe; color: #0284c7; padding: 4px 12px; border-radius: 6px; font-size: 1.8rem;">i.</span> 
+                Service Brake
+            </h3>
+            
+            <!-- Description -->
+            <p style="font-size: 1.15rem; color: #475569; margin: 0; line-height: 1.6; max-width: 1000px; padding-left: 1rem; border-left: 3px solid #cbd5e1;">
+                The service brake is the main, fully controllable braking system used during everyday train driving to slow down smoothly or bring the train to a complete stop at stations.
+            </p>
+        </div>
+        
+        <!-- Characteristics Table Label -->
+        <h4 style="font-size: 1.2rem; color: #0f172a; margin: 0 0 0.8rem 0; font-weight: 700; background-color: #f8fafc; display: inline-block; padding: 6px 14px; border-radius: 6px; border: 1px solid #e2e8f0;">
+            Service Brake Characteristics
+        </h4>
+
+        <!-- Data Table -->
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 1.1rem; color: #334155; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+            <thead>
+                <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+                    <th style="padding: 12px 16px; font-weight: 700; color: #0369a1; width: 25%;">Characteristic</th>
+                    <th style="padding: 12px 16px; font-weight: 700; color: #0369a1;">Specification Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #e2e8f0; background-color: #ffffff;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Deceleration Rate</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Delivers a target average deceleration of at least <strong style="color: #000000; font-weight: 800;">0.92 m/s²</strong> for reliable stopping.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f8fafc;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Jerk Limitation</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Keeps changes in acceleration capped at <strong style="color: #000000; font-weight: 800;">0.75 m/s³</strong> to guarantee passenger comfort.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e2e8f0; background-color: #ffffff;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Response Speed</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Achieves full braking application within <strong style="color: #000000; font-weight: 800;">1.9 seconds</strong>, featuring a <strong style="color: #000000; font-weight: 800;">0.4-second</strong> delay and a <strong style="color: #000000; font-weight: 800;">1.5-second</strong> pressure build-up time.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f8fafc;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Priority Blending</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Uses electric dynamic braking on motor cars first, adding electro-pneumatic friction brakes across axles only when extra stopping force is needed.</td>
+                </tr>
+                <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Load Adjustment</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Monitors air spring suspension levels continuously to adapt braking pressure to actual passenger weight.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Slide 31: Emergency Brake (Categorized & Table - Red Theme) -->
+<section class="slide" style="background-color: #ffffff; color: #1e293b; font-family: system-ui, -apple-system, sans-serif;">
+    <div class="slide-content" style="max-width: 1100px; margin: 0 auto; padding: 0.5rem 0;">
+        
+        <!-- Header Area -->
+        <div style="border-bottom: 2px solid #fef2f2; padding-bottom: 0.8rem; margin-bottom: 1rem;">
+            <h2 style="font-size: 1.4rem; color: #dc2626; margin-top: 0; margin-bottom: 0.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                2. Based on Application
+            </h2>
+            <h3 class="section-title" style="font-size: 2rem; margin: 0 0 0.5rem 0; color: #0f172a; display: flex; align-items: center; gap: 12px;">
+                <span style="background: #fee2e2; color: #b91c1c; padding: 4px 12px; border-radius: 6px; font-size: 1.5rem;">ii.</span> 
+                Emergency Brake
+            </h3>
+            <p style="font-size: 1.05rem; color: #475569; margin: 0; line-height: 1.4; max-width: 1000px; padding-left: 1rem; border-left: 3px solid #fca5a5;">
+                The emergency brake is an independent, fail-safe braking system that applies maximum friction stopping power immediately to bring the train to a complete stop during dangerous or critical situations.
+            </p>
+        </div>
+        
+        <!-- Primary Characteristics List (Concise) -->
+        <ul style="list-style-type: disc; padding-left: 2rem; margin: 0 0 1.5rem 0; display: flex; flex-direction: column; gap: 0.4rem; font-size: 1.05rem; color: #334155;">
+            <li style="line-height: 1.3;">
+                <strong style="color: #0f172a;">Deceleration:</strong> ≥ <strong style="color: #000000;">1.18 m/s² avg</strong> (<strong style="color: #000000;">1.3 m/s² max</strong>) via friction braking only.
+            </li>
+            <li style="line-height: 1.3;">
+                <strong style="color: #0f172a;">No Jerk Limit:</strong> Bypasses comfort controls for instant maximum force.
+            </li>
+            <li style="line-height: 1.3;">
+                <strong style="color: #0f172a;">Response Time:</strong> <strong style="color: #000000;">1.5s</strong> total (<strong style="color: #000000;">0.2s</strong> delay + <strong style="color: #000000;">1.3s</strong> pressure build-up).
+            </li>
+            <li style="line-height: 1.3;">
+                <strong style="color: #0f172a;">Irrevocable:</strong> Locks until zero speed, trigger clears, controller set to B<sub>max</sub>, and reset pressed.
+            </li>
+        </ul>
+
+        <!-- Sub-section: Triggers Table -->
+        <h4 style="font-size: 1.2rem; color: #7f1d1d; margin: 0 0 0.8rem 0; font-weight: 700; background-color: #fef2f2; display: inline-block; padding: 6px 14px; border-radius: 6px; border: 1px solid #fecaca;">
+            Emergency Brake Initiation Triggers
+        </h4>
+
+        <!-- Triggers Table -->
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 1rem; color: #334155; border: 1px solid #fecaca; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+            <thead>
+                <tr style="background-color: #fee2e2; border-bottom: 2px solid #f87171;">
+                    <th style="padding: 10px 16px; font-weight: 700; color: #991b1b; width: 25%;">Trigger Category</th>
+                    <th style="padding: 10px 16px; font-weight: 700; color: #991b1b;">Initiation Condition</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #fecaca; background-color: #ffffff;">
+                    <td style="padding: 10px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Manual Controls</td>
+                    <td style="padding: 10px 16px; line-height: 1.4;">TBC in "EM" position or Emergency Stop Pushbutton pressed.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #fecaca; background-color: #fef2f2;">
+                    <td style="padding: 10px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Driver Safety</td>
+                    <td style="padding: 10px 16px; line-height: 1.4;">Deadman switch released for > 3 seconds while moving.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #fecaca; background-color: #ffffff;">
+                    <td style="padding: 10px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Automatic Control</td>
+                    <td style="padding: 10px 16px; line-height: 1.4;">ATP/VATC trips (overspeed, signal overrun, transmission failure).</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #fecaca; background-color: #fef2f2;">
+                    <td style="padding: 10px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Pneumatic Drop</td>
+                    <td style="padding: 10px 16px; line-height: 1.4;">Main Reservoir (MR) pressure drops below <strong style="color: #000000;">6.0 bar</strong>.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #fecaca; background-color: #ffffff;">
+                    <td style="padding: 10px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Electrical Loops</td>
+                    <td style="padding: 10px 16px; line-height: 1.4;">Loss of 110V DC, emergency loop de-energized, or sleep mode.</td>
+                </tr>
+                <tr style="background-color: #fef2f2;">
+                    <td style="padding: 10px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Safety Incidents</td>
+                    <td style="padding: 10px 16px; line-height: 1.4;">Detrainment door opened, mode switched to OFF/Standby running, or unauthorized towing movement.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 32: Parking Brake (Categorized & Table - Yellow/Amber Theme) -->
+<section class="slide" style="background-color: #ffffff; color: #1e293b; font-family: system-ui, -apple-system, sans-serif;">
+    <div class="slide-content" style="max-width: 1100px; margin: 0 auto; padding: 2rem 0;">
+        
+        <!-- Header Area -->
+        <div style="border-bottom: 2px solid #fffbeb; padding-bottom: 1.5rem; margin-bottom: 2rem;">
+            <h2 style="font-size: 1.4rem; color: #d97706; margin-top: 0; margin-bottom: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                2. Based on Application
+            </h2>
+            <h3 class="section-title" style="font-size: 2.2rem; margin: 0 0 0.8rem 0; color: #0f172a; display: flex; align-items: center; gap: 12px;">
+                <span style="background: #fef3c7; color: #b45309; padding: 4px 12px; border-radius: 6px; font-size: 1.6rem;">iii.</span> 
+                Parking Brake
+            </h3>
+            <p style="font-size: 1.15rem; color: #475569; margin: 0; line-height: 1.6; max-width: 1000px; padding-left: 1rem; border-left: 3px solid #fcd34d;">
+                A mechanical safety brake using powerful internal springs to keep the train securely parked and stationary when unpowered or unattended.
+            </p>
+        </div>
+        
+        <!-- Characteristics Table Label -->
+        <h4 style="font-size: 1.2rem; color: #78350f; margin: 0 0 0.8rem 0; font-weight: 700; background-color: #fffbeb; display: inline-block; padding: 6px 14px; border-radius: 6px; border: 1px solid #fde68a;">
+            Parking Brake Characteristics
+        </h4>
+
+        <!-- Data Table -->
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 1.1rem; color: #334155; border: 1px solid #fde68a; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+            <thead>
+                <tr style="background-color: #fef3c7; border-bottom: 2px solid #fcd34d;">
+                    <th style="padding: 12px 16px; font-weight: 700; color: #92400e; width: 25%;">Characteristic</th>
+                    <th style="padding: 12px 16px; font-weight: 700; color: #92400e;">Specification Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #fde68a; background-color: #ffffff;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Spring-Applied</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Applies holding force automatically via internal springs when air vents.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #fde68a; background-color: #fffbeb;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Air Release</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Requires active compressed air to compress springs and release the mechanism.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #fde68a; background-color: #ffffff;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Gradient Hold</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Secures a fully loaded train (AW3) on a <strong style="color: #000000; font-weight: 800;">4% gradient</strong>, even if one car fails.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #fde68a; background-color: #fffbeb;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Auto Air-Loss</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Applies automatically if pressure drops below <strong style="color: #000000; font-weight: 800;">3.8 bar</strong>; releases above <strong style="color: #000000; font-weight: 800;">4.8 bar</strong>.</td>
+                </tr>
+                <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Independent Control</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Functions mechanically without electronic EBCU or wheel slide protection.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 33: Holding Brake (Categorized & Table - Green Theme) -->
+<section class="slide" style="background-color: #ffffff; color: #1e293b; font-family: system-ui, -apple-system, sans-serif;">
+    <div class="slide-content" style="max-width: 1100px; margin: 0 auto; padding: 2rem 0;">
+        
+        <!-- Header Area -->
+        <div style="border-bottom: 2px solid #f0fdf4; padding-bottom: 1.5rem; margin-bottom: 2rem;">
+            <h2 style="font-size: 1.4rem; color: #15803d; margin-top: 0; margin-bottom: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                2. Based on Application
+            </h2>
+            <h3 class="section-title" style="font-size: 2.2rem; margin: 0 0 0.8rem 0; color: #0f172a; display: flex; align-items: center; gap: 12px;">
+                <span style="background: #dcfce7; color: #166534; padding: 4px 12px; border-radius: 6px; font-size: 1.6rem;">iv.</span> 
+                Holding Brake
+            </h3>
+            <p style="font-size: 1.15rem; color: #475569; margin: 0; line-height: 1.6; max-width: 1000px; padding-left: 1rem; border-left: 3px solid #86efac;">
+                An automatic stopping feature that keeps the train stationary at stations or on slopes when it slows down to a complete standstill, preventing it from rolling backward.
+            </p>
+        </div>
+        
+        <!-- Characteristics Table Label -->
+        <h4 style="font-size: 1.2rem; color: #14532d; margin: 0 0 0.8rem 0; font-weight: 700; background-color: #f0fdf4; display: inline-block; padding: 6px 14px; border-radius: 6px; border: 1px solid #bbf7d0;">
+            Holding Brake Characteristics
+        </h4>
+
+        <!-- Data Table -->
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 1.1rem; color: #334155; border: 1px solid #bbf7d0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+            <thead>
+                <tr style="background-color: #dcfce7; border-bottom: 2px solid #86efac;">
+                    <th style="padding: 12px 16px; font-weight: 700; color: #166534; width: 25%;">Characteristic</th>
+                    <th style="padding: 12px 16px; font-weight: 700; color: #166534;">Specification Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #bbf7d0; background-color: #ffffff;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Activation Speed</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Applies automatically when train speed drops below <strong style="color: #000000; font-weight: 700;">0.5 km/h</strong> with a braking demand signal active.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #bbf7d0; background-color: #f0fdf4;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Applied Force Level</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Delivers <strong style="color: #000000; font-weight: 700;">70% of full service brake force</strong> by default, or higher if required by the brake demand signal.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #bbf7d0; background-color: #ffffff;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Gradient Protection</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Holds the train in place on incline tracks until the traction system builds enough powering torque.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #bbf7d0; background-color: #f0fdf4;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Automatic Reset</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Releases automatically once traction effort is established and train speed reaches <strong style="color: #000000; font-weight: 700;">12 km/h</strong>.</td>
+                </tr>
+                <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px 16px; font-weight: 600; color: #0f172a; vertical-align: top;">Driver Control Override</td>
+                    <td style="padding: 12px 16px; line-height: 1.5;">Allows manual compulsory release or override directly via the Train Control Management System (TCMS) screen.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 25: BECU System Conclusion & Strategic Summary -->
+            <section class="slide" style="background-color: #ffffff; color: #1e293b;">
+                <div class="slide-content" style="max-width: 1050px; margin: 0 auto; padding: 1rem 0;">
+                    
+                    <div class="badge" style="background: rgba(56, 189, 248, 0.15); color: #0284c7; border: 1px solid #38bdf8; display: inline-block; margin-bottom: 0.5rem;">BECU SYSTEM</div>
+                    <h2 class="section-title" style="font-size: 2.6rem; margin-top: 0; margin-bottom: 0.5rem; color: #0f172a;">BECU System </h2>
+                    <p class="section-subtitle" style="font-size: 1.25rem; margin-bottom: 2rem; color: #475569; font-weight: 500;">Core Takeaways & Architectural Highlights</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        
+                        <!-- Point 1 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 6px solid #0284c7; padding: 1.2rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                            <strong style="font-size: 1.2rem; color: #0f172a; margin-right: 0.5rem;">Centralized Brake Control:</strong>
+                            <span style="font-size: 1.1rem; color: #334155; line-height: 1.5;">Integrates Electro-Pneumatic (EP) and Electro-Dynamic (ED) braking, holding brake routines, and wheel slide protection via RACK1/RACK2 dual CAN bus and direct TCMS communication.</span>
+                        </div>
+
+                        <!-- Point 2 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 6px solid #0ea5e9; padding: 1.2rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                            <strong style="font-size: 1.2rem; color: #0f172a; margin-right: 0.5rem;">Intelligent Force Blending:</strong>
+                            <span style="font-size: 1.1rem; color: #334155; line-height: 1.5;">Prioritizes ED braking to optimize energy efficiency and wear, dynamically blending EP force during stopping phases or low-adhesion conditions.</span>
+                        </div>
+
+                        <!-- Point 3 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 6px solid #ef4444; padding: 1.2rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                            <strong style="font-size: 1.2rem; color: #0f172a; margin-right: 0.5rem;">Fail-Safe Emergency Protocols:</strong>
+                            <span style="font-size: 1.1rem; color: #334155; line-height: 1.5;">Guarantees deterministic 1.3 m/s² emergency deceleration via direct EP valve de-energization.</span>
+                        </div>
+
+                        <!-- Point 4 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 6px solid #10b981; padding: 1.2rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                            <strong style="font-size: 1.2rem; color: #0f172a; margin-right: 0.5rem;">Advanced WSP & Active Diagnostics:</strong>
+                            <span style="font-size: 1.1rem; color: #334155; line-height: 1.5;">Protects wheelsets via individual axle speed monitoring, automatically issuing ED Cut-Out (EDCO) when sliding exceeds thresholds, backed by RS485 diagnostic logging and control redundancy.</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+<!-- Slide: Full Page Image becu-->
+            <section class="slide" style="padding: 0;">
+                <div class="slide-content" style="max-width: 100%; height: 100%; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; position: relative;">
+                    <img src="assets/becu.jpg" 
+                         alt="Auxiliary Air Supply Module" 
+                         style="width: 100%; height: 100%; object-fit: contain;">
+                    
+                  
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 26: BCU System Conclusion & Strategic Summary -->
+            <section class="slide" style="background-color: #ffffff; color: #1e293b;">
+                <div class="slide-content" style="max-width: 1050px; margin: 0 auto; padding: 1rem 0;">
+                    
+                    <div class="badge" style="background: rgba(16, 185, 129, 0.15); color: #059669; border: 1px solid #10b981; display: inline-block; margin-bottom: 0.5rem;">BCU SYSTEM</div>
+                    <h2 class="section-title" style="font-size: 2.6rem; margin-top: 0; margin-bottom: 1.5rem; color: #0f172a;">BCU System</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        
+                        <!-- Point 1 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #0284c7; padding: 1rem 1.2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                            <strong style="font-size: 1.15rem; color: #0f172a; display: block; margin-bottom: 0.3rem;">Command Translation:</strong>
+                            <span style="font-size: 1.05rem; color: #334155; line-height: 1.4; display: block;">Converts electronic control signals directly into physical pneumatic pressure for each bogie.</span>
+                        </div>
+
+                        <!-- Point 2 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #0ea5e9; padding: 1rem 1.2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                            <strong style="font-size: 1.15rem; color: #0f172a; display: block; margin-bottom: 0.3rem;">Pressure Amplification:</strong>
+                            <span style="font-size: 1.05rem; color: #334155; line-height: 1.4; display: block;">Uses solenoid valves and high-capacity relay valves to achieve rapid cylinder pressure response times.</span>
+                        </div>
+
+                        <!-- Point 3 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #10b981; padding: 1rem 1.2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                            <strong style="font-size: 1.15rem; color: #0f172a; display: block; margin-bottom: 0.3rem;">Load Sensing:</strong>
+                            <span style="font-size: 1.05rem; color: #334155; line-height: 1.4; display: block;">Continuously reads air spring suspension levels to dynamically adjust braking force to passenger weight.</span>
+                        </div>
+
+                        <!-- Point 4 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #f59e0b; padding: 1rem 1.2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                            <strong style="font-size: 1.15rem; color: #0f172a; display: block; margin-bottom: 0.3rem;">Safety Override:</strong>
+                            <span style="font-size: 1.05rem; color: #334155; line-height: 1.4; display: block;">Automatically defaults to maximum load pressure calculation if suspension feedback signals are lost.</span>
+                        </div>
+
+                        <!-- Point 5 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #ef4444; padding: 1rem 1.2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                            <strong style="font-size: 1.15rem; color: #0f172a; display: block; margin-bottom: 0.3rem;">Direct Emergency Activation:</strong>
+                            <span style="font-size: 1.05rem; color: #334155; line-height: 1.4; display: block;">Bypasses electronic processing during safety loop de-energization for instant emergency braking.</span>
+                        </div>
+
+                        <!-- Point 6 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #8b5cf6; padding: 1rem 1.2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                            <strong style="font-size: 1.15rem; color: #0f172a; display: block; margin-bottom: 0.3rem;">Mechanical Fail-Safe Routing:</strong>
+                            <span style="font-size: 1.05rem; color: #334155; line-height: 1.4; display: block;">Routes direct, un-jerk-limited pneumatic pressure to brake cylinders via double check valves.</span>
+                        </div>
+                        
+                        <!-- Point 7 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #6366f1; padding: 1rem 1.2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                            <strong style="font-size: 1.15rem; color: #0f172a; display: block; margin-bottom: 0.3rem;">Fault Isolation:</strong>
+                            <span style="font-size: 1.05rem; color: #334155; line-height: 1.4; display: block;">Controls each bogie independently so a failure on one bogie does not compromise the other.</span>
+                        </div>
+
+                        <!-- Point 8 -->
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #14b8a6; padding: 1rem 1.2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                            <strong style="font-size: 1.15rem; color: #0f172a; display: block; margin-bottom: 0.3rem;">Diagnostic Monitoring:</strong>
+                            <span style="font-size: 1.05rem; color: #334155; line-height: 1.4; display: block;">Feeds real-time pneumatic pressure data back to central train control for fault detection and logging.</span>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+<!-- Slide: Full Page Image bcu-->
+            <section class="slide" style="padding: 0;">
+                <div class="slide-content" style="max-width: 100%; height: 100%; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; position: relative;">
+                    <img src="assets/bcu1.jpg" 
+                         alt="Auxiliary Air Supply Module" 
+                         style="width: 100%; height: 100%; object-fit: contain;">
+                    
+                    <!-- Top Middle Caption -->
+                    <div style="position: absolute; top: 30px; width: 100%; text-align: center; z-index: 10;">
+                        <span style="background: rgba(0, 0, 0, 0.85); color: #ffffff; padding: 10px 30px; border-radius: 30px; font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px);">
+                             BCU Connection Module
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+<!-- Slide: Full Page Image bcu-->
+            <section class="slide" style="padding: 0;">
+                <div class="slide-content" style="max-width: 100%; height: 100%; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; position: relative;">
+                    <img src="assets/bcu.jpg" 
+                         alt="BCU Connection Module" 
+                         style="width: 100%; height: 100%; object-fit: contain;">
+                    
+                    
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide 34: Brake Blending (Redesigned Layout - Compact Card Style) -->
+<section class="slide" style="background-color: #f8fafc; color: #1e293b; font-family: sans-serif;">
+    <div class="slide-content" style="max-width: 1100px; margin: 0 auto; padding: 1rem;">
+        
+        <!-- Header Area -->
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <div class="badge" style="display: inline-block; padding: 6px 14px; background: rgba(2, 132, 199, 0.1); color: #0284c7; border-radius: 50px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem;">
+                Intelligent Braking
+            </div>
+            
+            <h2 style="font-size: 2.8rem; margin: 0 0 1rem 0; font-weight: 800; letter-spacing: -0.5px; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                Brake Blending Concept
+            </h2>
+            
+            <p style="font-size: 1.15rem; color: #334155; margin: 0 auto; line-height: 1.6; background-color: #ffffff; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); border: 1px solid #e2e8f0; max-width: 900px;">
+                An intelligent system that automatically combines <strong>electric dynamic (ED)</strong> and <strong>mechanical friction braking (EP)</strong> to deliver precise stopping force, save energy, and reduce wear.
+            </p>
+        </div>
+        
+        <!-- Characteristics List (Compact Card Grid) -->
+        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+            
+            <!-- Card 1 -->
+            <div style="background: #ffffff; padding: 0.8rem 1.2rem; border-radius: 8px; border: 1px solid #e2e8f0; border-left: 5px solid #0369a1; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                <strong style="color: #0f172a; font-size: 1.1rem; display: block; margin-bottom: 0.2rem;">Priority Execution</strong>
+                <span style="color: #475569; font-size: 1.05rem; line-height: 1.4;">Prioritizes Electro-Dynamic (ED) regenerative braking to maximize power savings.</span>
+            </div>
+
+            <!-- Card 2 -->
+            <div style="background: #ffffff; padding: 0.8rem 1.2rem; border-radius: 8px; border: 1px solid #e2e8f0; border-left: 5px solid #0284c7; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                <strong style="color: #0f172a; font-size: 1.1rem; display: block; margin-bottom: 0.2rem;">Friction Supplementation</strong>
+                <span style="color: #475569; font-size: 1.05rem; line-height: 1.4;">Automatically adds Electro-Pneumatic (EP) friction braking to make up for any shortfall in ED effort.</span>
+            </div>
+
+            <!-- Card 3 -->
+            <div style="background: #ffffff; padding: 0.8rem 1.2rem; border-radius: 8px; border: 1px solid #e2e8f0; border-left: 5px solid #38bdf8; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                <strong style="color: #0f172a; font-size: 1.1rem; display: block; margin-bottom: 0.2rem;">Load Adjustment</strong>
+                <span style="color: #475569; font-size: 1.05rem; line-height: 1.4;">Dynamically calculates and adjusts braking force based on passenger weight and train speed.</span>
+            </div>
+
+            <!-- Card 4 -->
+            <div style="background: #ffffff; padding: 0.8rem 1.2rem; border-radius: 8px; border: 1px solid #e2e8f0; border-left: 5px solid #7dd3fc; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                <strong style="color: #0f172a; font-size: 1.1rem; display: block; margin-bottom: 0.2rem;">Low-Speed Transfer</strong>
+                <span style="color: #475569; font-size: 1.05rem; line-height: 1.4;">Smoothly shifts entirely to friction brakes when speed drops below <strong style="color: #000000;">8 km/h</strong>.</span>
+            </div>
+
+            <!-- Card 5 -->
+            <div style="background: #ffffff; padding: 0.8rem 1.2rem; border-radius: 8px; border: 1px solid #e2e8f0; border-left: 5px solid #bae6fd; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                <strong style="color: #0f172a; font-size: 1.1rem; display: block; margin-bottom: 0.2rem;">Jerk Control</strong>
+                <span style="color: #475569; font-size: 1.05rem; line-height: 1.4;">Manages brake handovers carefully to prevent sudden jolts and ensure passenger comfort.</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- Slide: Full Page Image blending-->
+            <section class="slide" style="padding: 0;">
+                <div class="slide-content" style="max-width: 100%; height: 100%; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; position: relative;">
+                    <img src="assets/blending1.jpg" 
+                         alt="Auxiliary Air Supply Module" 
+                         style="width: 100%; height: 100%; object-fit: contain;">
+                  
+                 
+                </div>
+            </section>
+
+
+
+
+<!-- Slide: Full Page Image blending-->
+            <section class="slide" style="padding: 0;">
+                <div class="slide-content" style="max-width: 100%; height: 100%; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; position: relative;">
+                    <img src="assets/blending.jpg" 
+                         alt="Brake Blending" 
+                         style="width: 100%; height: 100%; object-fit: contain;">
+                    
+                    <!-- Top Middle Caption -->
+                    <div style="position: absolute; top: 30px; width: 100%; text-align: center; z-index: 10;">
+                        <span style="background: rgba(0, 0, 0, 0.85); color: #ffffff; padding: 10px 30px; border-radius: 30px; font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px);">
+                            Brake Blending
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========================================== -->
+<!-- SLIDE 1: BCU COMPONENT OVERVIEW            -->
+<!-- ========================================== -->
+<section class="slide" style="background-color: #ffffff; color: #1e293b; font-family: system-ui, -apple-system, sans-serif;">
+    <div class="slide-content" style="max-width: 1150px; margin: 0 auto; padding: 0.2rem 0;">
+        
+        <!-- Header -->
+        <div style="border-bottom: 2px solid #e2e8f0; padding-bottom: 0.4rem; margin-bottom: 0.8rem;">
+            <h3 style="font-size: 1.8rem; margin: 0; color: #000000; display: flex; align-items: center; gap: 12px; font-weight: 800;">
+                Brake Control Unit (BCU)
+            </h3>
+            <h2 style="font-size: 1.1rem; color: #64748b; margin-top: 0.2rem; margin-bottom: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                Component & Valve Overview
+            </h2>
+        </div>
+
+        <!-- Split Layout Container -->
+        <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+            
+            <!-- Left Side: Diagram -->
+            <div style="flex: 1.2; border: 1px solid #cbd5e1; border-radius: 8px; padding: 0.5rem; background-color: #f8fafc; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <img src="assets/lbcu.jpg" alt="BCU Schematic" style="width: 100%; height: auto; border-radius: 4px; display: block;">
+                <div style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.85rem; font-weight: 600; color: #475569;">
+                    The B03 Manifold represents the core pneumatic logic block of the braking system.
+                </div>
+            </div>
+
+            <!-- Right Side: The Component Breakdown -->
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <h4 style="margin: 0 0 0.8rem 0; font-size: 1.1rem; color: #0f172a;">
+                    Key Manifold Components
+                </h4>
+                
+                <div>
+                    <div class="bcu-group">
+                        <h5 style="margin: 0 0 0.3rem 0; font-size: 1rem; color: #0369a1;">Pneumatic Interfaces</h5>
+                        <p style="margin: 0; font-size: 0.85rem; color: #475569; line-height: 1.4;">
+                            <span class="bcu-badge">R1 / R</span> <strong>Main Reservoir Supply:</strong> High-pressure air input.<br>
+                            <span class="bcu-badge">T</span> <strong>Air Spring (AS) Port:</strong> Input for load weighing pressure.<br>
+                            <span class="bcu-badge">C</span> <strong>Brake Cylinder (BC) Port:</strong> Output to apply friction brakes.
+                        </p>
+                    </div>
+
+                    <div class="bcu-group">
+                        <h5 style="margin: 0 0 0.3rem 0; font-size: 1rem; color: #15803d;">Active Control Valves</h5>
+                        <p style="margin: 0; font-size: 0.85rem; color: #475569; line-height: 1.4;">
+                            <span class="bcu-badge">a</span> <strong>Service Brake Block:</strong> Proportional valves for normal stops.<br>
+                            <span class="bcu-badge">e</span> <strong>Emergency Valve:</strong> Fail-safe solenoid for emergency trigger.<br>
+                            <span class="bcu-badge">f</span> <strong>Emergency Proportional Valve:</strong> Blends AS pressure during EB.<br>
+                            <span class="bcu-badge">g</span> <strong>Double Check Valve:</strong> Resolves Service vs. Emergency signals.
+                        </p>
+                    </div>
+
+                    <div class="bcu-group">
+                        <h5 style="margin: 0 0 0.3rem 0; font-size: 1rem; color: #b45309;">Power Amplification</h5>
+                        <p style="margin: 0; font-size: 0.85rem; color: #475569; line-height: 1.4;">
+                            <span class="bcu-badge">d</span> <strong>Relay Valve (Kr6-AA):</strong> The heart of the BCU. It takes low-volume control signals from valves <em>a</em> or <em>f</em> and outputs high-volume MR air directly to port <em>C</em>.
+                        </p>
+                    </div>
+
+                    <div class="bcu-group">
+                        <h5 style="margin: 0 0 0.3rem 0; font-size: 1rem; color: #64748b;">Sensors & Isolation</h5>
+                        <p style="margin: 0; font-size: 0.85rem; color: #475569; line-height: 1.4;">
+                            <span class="bcu-badge">h/j/k</span> <strong>Pressure Transducers:</strong> Converts air pressure to electrical feedback.<br>
+                            <span class="bcu-badge">B04.x</span> <strong>Isolation Cocks (BIC):</strong> Manual valves to cut off air.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- SLIDE 2: SERVICE BRAKE                     -->
+<!-- ========================================== -->
+<section class="slide" style="background-color: #ffffff; color: #1e293b; font-family: system-ui, -apple-system, sans-serif;">
+    <div class="slide-content" style="max-width: 1150px; margin: 0 auto; padding: 1rem 0;">
+        
+        <div style="border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+            <h3 style="font-size: 2rem; margin: 0; color: #000000; display: flex; align-items: center; gap: 12px; font-weight: 800;">
+                Service Brake Control Loop
+            </h3>
+            <h2 style="font-size: 1.2rem; color: #64748b; margin-top: 0; margin-bottom: 0.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                Pneumatic Flow Sequence
+            </h2>
+        </div>
+
+        <div style="display: flex; gap: 2rem; align-items: flex-start;">
+            <div style="flex: 1.2; border: 1px solid #cbd5e1; border-radius: 8px; padding: 0.8rem; background-color: #f8fafc; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <img src="assets/lsb.jpg" alt="Service Brake Schematic" style="width: 100%; height: auto; border-radius: 4px; display: block;">
+                <div style="margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-around; font-size: 0.85rem; font-weight: 700;">
+                    <span style="color: #2563eb;">■ Supply</span>
+                    <span style="color: #16a34a;">■ Control</span>
+                    <span style="color: #9333ea;">■ Load Weighing</span>
+                    <span style="color: #dc2626;">■ Brake Output</span>
+                </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <h4 style="margin: 0 0 1rem 0; font-size: 1.2rem; color: #0f172a;">
+                    Airflow Path Explanation
+                </h4>
+                <div>
+                    <div class="flow-step step-blue" style="border-left-color: #2563eb;">
+                        <h5 style="margin: 0 0 0.3rem 0; font-size: 1.1rem; color: #2563eb;">1. Main Supply Air (Blue)</h5>
+                        <p style="margin: 0; font-size: 0.95rem; color: #475569; line-height: 1.4;">Air from the main reservoir enters the system and waits at the inlet valves.</p>
+                    </div>
+                    <div class="flow-step step-green" style="border-left-color: #16a34a;">
+                        <h5 style="margin: 0 0 0.3rem 0; font-size: 1.1rem; color: #16a34a;">2. Valve Activation (Green)</h5>
+                        <p style="margin: 0; font-size: 0.95rem; color: #475569; line-height: 1.4;">Solenoids receive a command. They energize, opening the path for the supply air to become <strong>control air</strong>.</p>
+                    </div>
+                    <div class="flow-step step-purple" style="border-left-color: #9333ea;">
+                        <h5 style="margin: 0 0 0.3rem 0; font-size: 1.1rem; color: #9333ea;">3. Load Adjustment (Purple)</h5>
+                        <p style="margin: 0; font-size: 0.95rem; color: #475569; line-height: 1.4;">Air Spring (AS) pressure enters the <strong>Kr6-AA relay valve</strong>, providing passenger weight data.</p>
+                    </div>
+                    <div class="flow-step step-red">
+                        <h5 style="margin: 0 0 0.3rem 0; font-size: 1.1rem; color: #dc2626;">4. Final Application (Red)</h5>
+                        <p style="margin: 0; font-size: 0.95rem; color: #475569; line-height: 1.4;">The relay valve blends the control air and AS pressure, sending the final Brake Cylinder (BC) pressure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- SLIDE 3: EMERGENCY BRAKE                   -->
+<!-- ========================================== -->
+<section class="slide" style="background-color: #ffffff; color: #1e293b; font-family: system-ui, -apple-system, sans-serif;">
+    <div class="slide-content" style="max-width: 1150px; margin: 0 auto; padding: 1rem 0;">
+        
+        <div style="border-bottom: 2px solid #fee2e2; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+            <h3 style="font-size: 2rem; margin: 0; color: #000000; display: flex; align-items: center; gap: 12px; font-weight: 800;">
+                Emergency Brake Control Loop
+            </h3>
+            <h2 style="font-size: 1.2rem; color: #dc2626; margin-top: 0; margin-bottom: 0.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                Fail-Safe Pneumatic Sequence
+            </h2>
+        </div>
+
+        <div style="display: flex; gap: 2rem; align-items: flex-start;">
+            <div style="flex: 1.2; border: 1px solid #fecaca; border-radius: 8px; padding: 0.8rem; background-color: #fef2f2; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <img src="assets/leb.jpg" alt="Emergency Brake Schematic" style="width: 100%; height: auto; border-radius: 4px; display: block;">
+                
+                <div style="margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid #fecaca; display: flex; justify-content: space-around; font-size: 0.85rem; font-weight: 700;">
+                    <span style="color: #64748b;">■ De-energized</span>
+                    <span style="color: #2563eb;">■ Supply</span>
+                    <span style="color: #eab308;">■ E-Control</span>
+                    <span style="color: #dc2626;">■ Output</span>
+                </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <h4 style="margin: 0 0 1rem 0; font-size: 1.2rem; color: #9f1239;">
+                    Fail-Safe Action Path
+                </h4>
+                <div>
+                    <div class="flow-step step-eb-trigger" style="border-left-color: #2563eb;">
+                        <h5 style="margin: 0 0 0.2rem 0; font-size: 1.05rem; color: #64748b;">1. Loop Drop (Blue Lightning)</h5>
+                        <p style="margin: 0; font-size: 0.9rem; color: #475569; line-height: 1.3;">The electrical emergency loop is broken, causing the solenoid valve to instantly de-energize to its fail-safe state.</p>
+                    </div>
+                    <div class="flow-step step-eb-air" style="border-left-color: #9333ea;">
+                        <h5 style="margin: 0 0 0.2rem 0; font-size: 1.05rem; color: #2563eb;">2. Direct Supply (Blue)</h5>
+                        <p style="margin: 0; font-size: 0.9rem; color: #475569; line-height: 1.3;">Main reservoir supply air flows directly through the de-energized paths, bypassing normal service controls.</p>
+                    </div>
+                    <div class="flow-step step-eb-purple" style="border-left-color: #eab308;">
+                        <h5 style="margin: 0 0 0.2rem 0; font-size: 1.05rem; color: #9333ea;">3. Load Reference (Purple)</h5>
+                        <p style="margin: 0; font-size: 0.9rem; color: #475569; line-height: 1.3;">Air Spring (AS) pressure enters the emergency proportional valve to provide train weight data.</p>
+                    </div>
+                    <div class="flow-step step-eb-yellow" style="border-left-color: #dc2626;">
+                        <h5 style="margin: 0 0 0.2rem 0; font-size: 1.05rem; color: #d97706;">4. E-Control Signal (Yellow)</h5>
+                        <p style="margin: 0; font-size: 0.9rem; color: #475569; line-height: 1.3;">The proportional valve blends the supply and AS pressure, sending an emergency control signal to the relay valve.</p>
+                    </div>
+                    <div class="flow-step step-eb-output">
+                        <h5 style="margin: 0 0 0.2rem 0; font-size: 1.05rem; color: #dc2626;">5. Max Application (Red)</h5>
+                        <p style="margin: 0; font-size: 0.9rem; color: #475569; line-height: 1.3;">The relay valve irrevocably outputs the maximum required Brake Cylinder (BC) pressure to stop the train.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- SLIDE 4: PARKING BRAKE                     -->
+<!-- ========================================== -->
+<section class="slide" style="background-color: #ffffff; color: #1e293b; font-family: system-ui, -apple-system, sans-serif;">
+    <div class="slide-content" style="max-width: 1150px; margin: 0 auto; padding: 0.2rem 0;">
+        
+        <div style="border-bottom: 2px solid #fef3c7; padding-bottom: 0.4rem; margin-bottom: 0.6rem;">
+            <h3 style="font-size: 1.8rem; margin: 0; color: #000000; display: flex; align-items: center; gap: 12px; font-weight: 800;">
+                Working of Parking Brake
+            </h3>
+            <h2 style="font-size: 1.1rem; color: #d97706; margin-top: 0.2rem; margin-bottom: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                Dual-Coil PBMV Operation
+            </h2>
+        </div>
+
+        <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+            
+            <div style="flex: 1.2; border: 1px solid #fde68a; border-radius: 8px; padding: 0.5rem; background-color: #fffbeb; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <img src="assets/lpb.jpg" alt="Parking Brake Working Diagram" style="width: 100%; height: auto; border-radius: 4px; display: block;">
+                
+                <div style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #fde68a; display: flex; justify-content: space-around; font-size: 0.8rem; font-weight: 700;">
+                    <span style="color: #0ea5e9;">■ MR Supply</span>
+                    <span style="color: #2563eb;">■ Release Working</span>
+                    <span style="color: #dc2626;">■ Apply Working</span>
+                    <span style="color: #64748b;">■ Feedback</span>
+                </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <h4 style="margin: 0 0 0.6rem 0; font-size: 1.1rem; color: #92400e;">
+                    B09 Valve Working Principle
+                </h4>
+                <div>
+                    <div class="pb-flow-step step-pb-mr" style="border-left-color: #0ea5e9;">
+                        <h5 style="margin: 0 0 0.1rem 0; font-size: 1rem; color: #0284c7;">1. Standby Supply (MR)</h5>
+                        <p style="margin: 0; font-size: 0.85rem; color: #475569; line-height: 1.3;">Main Reservoir (MR) air constantly supplies port <strong>P</strong> of the Parking Brake Magnet Valve (B09), waiting for an electrical command to actuate the brake.</p>
+                    </div>
+                    
+                    <div class="pb-flow-step step-pb-release" style="border-left-color: #2563eb;">
+                        <h5 style="margin: 0 0 0.1rem 0; font-size: 1rem; color: #2563eb;">2. Working: Brake Release (Blue)</h5>
+                        <p style="margin: 0; font-size: 0.85rem; color: #475569; line-height: 1.3;"><strong>Magnet Valve I energizes</strong> and <strong>Valve II de-energizes</strong>. The mechanical spool shifts right. Air flows from port <strong>P</strong> to <strong>B</strong>, inflating the cylinders and forcing the heavy mechanical springs to compress. The train can now move.</p>
+                    </div>
+
+                    <div class="pb-flow-step step-pb-apply" style="border-left-color: #dc2626;">
+                        <h5 style="margin: 0 0 0.1rem 0; font-size: 1rem; color: #dc2626;">3. Working: Brake Application (Red)</h5>
+                        <p style="margin: 0; font-size: 0.85rem; color: #475569; line-height: 1.3;"><strong>Magnet Valve I de-energizes</strong> and <strong>Valve II energizes</strong>. The spool shifts left, cutting off MR air. Cylinder air exhausts through port <strong>S</strong>. Without air pressure, the springs aggressively expand, locking the wheels.</p>
+                    </div>
+
+                    <div class="pb-flow-step step-pb-sensor">
+                        <h5 style="margin: 0 0 0.1rem 0; font-size: 1rem; color: #475569;">4. Operational Feedback</h5>
+                        <p style="margin: 0; font-size: 0.85rem; color: #475569; line-height: 1.3;">Pressure switches (B10) monitor the working state. A pressure reading above <strong>5.2 bar</strong> confirms a successful release, while a drop below <strong>4.0 bar</strong> confirms a successful application.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Slide 25: Closing -->
+            <section class="slide">
+                <div class="slide-content cover-slide centered">
+                    <div class="badge">END OF PRESENTATION </div>
+                    <h1 class="hero-title">THANK YOU </h1>
+                    <button class="primary-button" onclick="goToSlide(0)">Restart Presentation</button>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+<!-- ========================================== -->
+            <!-- INVISIBLE INDEX SLIDE (Planner Aesthetic)  -->
+            <!-- ========================================== -->
+            <section class="slide" id="index-slide" style="background-color: #cbd5e1; padding: 1rem;">
+                
+                <!-- Internal styles for the planner -->
+                <style>
+                    .planner-book {
+                        /* CONTROL CONTAINER SIZE HERE */
+                        max-width: 1300px; /* Width of the notebook */
+                        height: 90vh;      /* Height of the notebook */
+                        
+                        position: relative; width: 100%; margin: 0 auto; display: flex; 
+                        background: #fffdf9; border-radius: 12px; 
+                        box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(0,0,0,0.05);
+                    }
+                    .planner-page {
+                        flex: 1; padding: 1.5rem 2.5rem; display: flex; flex-direction: column; gap: 0.6rem;
+                        position: relative;
+                    }
+                    .page-left { box-shadow: inset -15px 0 20px -15px rgba(0,0,0,0.15); border-radius: 12px 0 0 12px; }
+                    .page-right { box-shadow: inset 15px 0 20px -15px rgba(0,0,0,0.15); border-radius: 0 12px 12px 0; }
+                    
+                    /* The Binder Rings */
+                    .binder-spine {
+                        position: absolute; left: 50%; top: 3%; bottom: 3%; width: 40px; 
+                        transform: translateX(-50%); display: flex; flex-direction: column; 
+                        justify-content: space-evenly; align-items: center; z-index: 10; pointer-events: none;
+                    }
+                    .ring {
+                        width: 36px; height: 10px; background: linear-gradient(90deg, #9ca3af, #f3f4f6, #9ca3af);
+                        border-radius: 5px; box-shadow: 0 3px 4px rgba(0,0,0,0.3), inset 0 -1px 2px rgba(0,0,0,0.2);
+                    }
+                    
+                    /* The Side Tabs */
+                    .planner-tabs {
+                        position: absolute; right: -34px; top: 8%; display: flex; flex-direction: column; gap: 12px; z-index: 0;
+                    }
+                    .p-tab {
+                        cursor: pointer; color: white; padding: 14px 6px; border-radius: 0 8px 8px 0; 
+                        writing-mode: vertical-rl; text-align: center; font-weight: 700; 
+                        font-size: 0.8rem; 
+                        letter-spacing: 1px; box-shadow: 4px 4px 10px rgba(0,0,0,0.15); transition: transform 0.2s;
+                    }
+                    .p-tab:hover { transform: translateX(5px); }
+                    
+                    /* List Items / Notebook Lines */
+                    .planner-link {
+                        cursor: pointer; padding: 5px 8px; 
+                        font-size: 0.75rem; 
+                        color: #334155; border-bottom: 1px dotted #cbd5e1; transition: all 0.2s; font-weight: 500;
+                    }
+                    .planner-link:hover {
+                        background: rgba(99, 91, 255, 0.05); color: #0f172a; font-weight: 700;
+                        transform: translateX(4px); border-radius: 4px; border-bottom-color: transparent;
+                    }
+                    /* Clickable Section Titles */
+                    .planner-section-title {
+                        font-size: 1.05rem; 
+                        margin-bottom: 0.3rem; display: flex; align-items: center; gap: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.4rem;
+                        cursor: pointer; transition: all 0.2s ease;
+                    }
+                    .planner-section-title:hover {
+                        transform: translateX(4px); opacity: 0.8;
+                    }
+                    .dot-indicator { width: 10px; height: 10px; border-radius: 50%; }
+                </style>
+
+                <div class="planner-book">
+                    
+                    <!-- Binder Rings -->
+                    <div class="binder-spine">
+                        <div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div>
+                        <div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div>
+                        <div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div>
+                    </div>
+
+                    <!-- Side Tabs (Quick Jump to Covers) -->
+                    <div class="planner-tabs">
+                        <div class="p-tab" onclick="goToSlide(0, true)" style="background: #64748b;">INTRO</div>
+                        <div class="p-tab" onclick="goToSlide(4, true)" style="background: #06b6d4;">POWER</div>
+                        <div class="p-tab" onclick="goToSlide(19, true)" style="background: #10b981;">AIR</div>
+                        <div class="p-tab" onclick="goToSlide(28, true)" style="background: #0284c7;">BRAKES</div>
+                    </div>
+
+                    <!-- ================= LEFT PAGE ================= -->
+                    <div class="planner-page page-left">
+                        
+                        <div style="margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <h2 style="font-size: 2rem; color: #0f172a; font-weight: 800; margin: 0; letter-spacing: -1px;">Index</h2>
+                            <p style="color: #64748b; font-size: 0.8rem; margin: 0; font-weight: 600;">Press <kbd style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px; color: #0f172a;">I</kbd> to return.</p>
+                        </div>
+
+                        <!-- 1. Intro -->
+                        <div>
+                            <!-- Header acts as the Cover Link -->
+                            <h3 class="planner-section-title" style="color: #475569;" onclick="goToSlide(0, true)"><span class="dot-indicator" style="background: #64748b;"></span> Introduction</h3>
+                            <div style="display: grid; grid-template-rows: repeat(2, auto); grid-auto-flow: column; gap: 2px 16px;">
+                                <div onclick="goToSlide(1, true)" class="planner-link">1. OHE Equipment</div>
+                                <div onclick="goToSlide(2, true)" class="planner-link">2. Assembly Components</div>
+                                <div onclick="goToSlide(3, true)" class="planner-link">3. OHE Specifications</div>
+                                <div onclick="goToSlide(4, true)" class="planner-link">4. Return Conductor & OPC</div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Power Supply -->
+                        <div>
+                            <!-- Header acts as the Cover Link -->
+                            <h3 class="planner-section-title" style="color: #0891b2;" onclick="goToSlide(5, true)"><span class="dot-indicator" style="background: #06b6d4;"></span> Power Supply</h3>
+                            <div style="display: grid; grid-template-rows: repeat(7, auto); grid-auto-flow: column; gap: 2px 16px;">
+                                <div onclick="goToSlide(6, true)" class="planner-link">6. Power Supply Overview</div>
+                                <div onclick="goToSlide(7, true)" class="planner-link">7. Full Diagram (PS)</div>
+                                <div onclick="goToSlide(8, true)" class="planner-link">8. Current Collection</div>
+                                <div onclick="goToSlide(9, true)" class="planner-link">9. Pantograph Assembly</div>
+                                <div onclick="goToSlide(10, true)" class="planner-link">10. Potential Transformer</div>
+                                <div onclick="goToSlide(11, true)" class="planner-link">11. Vacuum Circuit Breaker</div>
+                                <div onclick="goToSlide(12, true)" class="planner-link">12. Emergency Ground Switch</div>
+                                <div onclick="goToSlide(13, true)" class="planner-link">13. Lightning Arrester</div>
+                                <div onclick="goToSlide(14, true)" class="planner-link">14. Current Transformer</div>
+                                <div onclick="goToSlide(15, true)" class="planner-link">15. Main Transformer</div>
+                                <div onclick="goToSlide(16, true)" class="planner-link">16. Traction Motor</div>
+                                <div onclick="goToSlide(17, true)" class="planner-link">17. Static Inverter (SIV)</div>
+                                <div onclick="goToSlide(18, true)" class="planner-link">18. Connected Loads</div>
+                                <div onclick="goToSlide(19, true)" class="planner-link">19. Battery System (BCG)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= RIGHT PAGE ================= -->
+                    <div class="planner-page page-right">
+                        
+                        <div style="margin-bottom: 0.5rem; text-align: right; color: #94a3b8; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;">
+                            DIGITAL NOTEBOOK // 2024
+                        </div>
+
+                        <!-- 3. Air Supply -->
+                        <div>
+                            <!-- Header acts as the Cover Link -->
+                            <h3 class="planner-section-title" style="color: #059669;" onclick="goToSlide(20, true)"><span class="dot-indicator" style="background: #10b981;"></span> Air Supply</h3>
+                            <div style="display: grid; grid-template-rows: repeat(4, auto); grid-auto-flow: column; gap: 2px 16px;">
+                                <div onclick="goToSlide(21, true)" class="planner-link">21. Air Supply Overview</div>
+                                <div onclick="goToSlide(22, true)" class="planner-link">22. Pneumatic Module</div>
+                                <div onclick="goToSlide(23, true)" class="planner-link">23. Main Air Diagram 1</div>
+                                <div onclick="goToSlide(24, true)" class="planner-link">24. Main Air Diagram 2</div>
+                                <div onclick="goToSlide(25, true)" class="planner-link">25. Aux Compressor</div>
+                                <div onclick="goToSlide(26, true)" class="planner-link">26. Aux Diagram 1</div>
+                                <div onclick="goToSlide(27, true)" class="planner-link">27. Aux Diagram 2</div>
+                                <div onclick="goToSlide(28, true)" class="planner-link">28. Cocks & Color Codes</div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Brake System -->
+                        <div>
+                            <!-- Header acts as the Cover Link -->
+                            <h3 class="planner-section-title" style="color: #0284c7;" onclick="goToSlide(29, true)"><span class="dot-indicator" style="background: #0284c7;"></span> Brake System</h3>
+                            <div style="display: grid; grid-template-rows: repeat(11, auto); grid-auto-flow: column; gap: 2px 16px;">
+                                <div onclick="goToSlide(30, true)" class="planner-link">30. Brake Overview</div>
+                                <div onclick="goToSlide(31, true)" class="planner-link">31. Categorization</div>
+                                <div onclick="goToSlide(32, true)" class="planner-link">32. EP (Friction) Brake</div>
+                                <div onclick="goToSlide(33, true)" class="planner-link">33. ED (Regen) Brake</div>
+                                <div onclick="goToSlide(34, true)" class="planner-link">34. Service Brake</div>
+                                <div onclick="goToSlide(35, true)" class="planner-link">35. Emergency Brake</div>
+                                <div onclick="goToSlide(36, true)" class="planner-link">36. Parking Brake</div>
+                                <div onclick="goToSlide(37, true)" class="planner-link">37. Holding Brake</div>
+                                <div onclick="goToSlide(38, true)" class="planner-link">38. BECU System</div>
+                                <div onclick="goToSlide(39, true)" class="planner-link">39. BECU Diagram</div>
+                                <div onclick="goToSlide(40, true)" class="planner-link">40. BCU System</div>
+                                <div onclick="goToSlide(41, true)" class="planner-link">41. BCU Diagram 1</div>
+                                <div onclick="goToSlide(42, true)" class="planner-link">42. BCU Diagram 2</div>
+                                <div onclick="goToSlide(43, true)" class="planner-link">43. Brake Blending</div>
+                                <div onclick="goToSlide(44, true)" class="planner-link">44. Blending Diagram 1</div>
+                                <div onclick="goToSlide(45, true)" class="planner-link">45. Blending Diagram 2</div>
+                                <div onclick="goToSlide(46, true)" class="planner-link">46. BCU Components</div>
+                                <div onclick="goToSlide(47, true)" class="planner-link">47. Service Control Loop</div>
+                                <div onclick="goToSlide(48, true)" class="planner-link">48. Emergency Loop</div>
+                                <div onclick="goToSlide(49, true)" class="planner-link">49. Parking Brake Working</div>
+                                <div onclick="goToSlide(50, true)" class="planner-link">50. Thank You</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slide Counter -->
+    <div id="slide-counter" class="slide-counter"></div>
+
+
+        </main>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

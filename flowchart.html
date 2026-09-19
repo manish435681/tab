@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Auxiliary Power System Diagram</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --navy:#16233d;
+    --paper:#ffffff; 
+    --ac-fill:#c3cdd8;
+    --ac-stroke:#16233d;
+    --dc-fill:#2f7a4f;
+    --dc-stroke:#123c26;
+    --bus-fill:#4b5563;
+    --bus230-fill:#2f6fb0;
+    --bus110-fill:#1f6b3f;
+    --text-dark:#16233d;
+    --text-light:#ffffff;
+  }
+
+  html,body{
+    margin:0;
+    padding:0;
+    background:var(--paper);
+    font-family:'IBM Plex Sans', sans-serif;
+  }
+
+  .diagram-wrap{
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #diagram-svg{
+    width: 100%;
+    max-width: 1750px;
+    height: auto;
+    display: block;
+    background-color: var(--paper);
+  }
+
+  .node-label{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:700;
+    fill:var(--text-dark);
+    text-anchor:middle;
+    dominant-baseline:middle;
+  }
+  .node-label.on-dark{ fill:var(--text-light); }
+  
+  .node-sub{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:500;
+    fill:var(--text-dark);
+    text-anchor:middle;
+    dominant-baseline:middle;
+  }
+  .node-sub.on-dark{ fill:var(--text-light); }
+
+  /* =========================================
+     NEW: Hover Effect Styles for Edges (Lines)
+     ========================================= */
+  .edge-group {
+    cursor: pointer;
+  }
+
+  /* Invisible thick line to make hovering easy */
+  .edge-hitbox {
+    stroke: transparent;
+    stroke-width: 30;
+    fill: none;
+  }
+
+  /* The visible line */
+  .edge-line {
+    stroke: var(--navy);
+    stroke-width: 3;
+    fill: none;
+    marker-end: url(#arrow-navy);
+    transition: stroke 0.3s ease, stroke-width 0.3s ease, filter 0.3s ease;
+  }
+
+  /* When the group is hovered, change the line */
+  .edge-group:hover .edge-line {
+    stroke: #d97706; /* Highlight Orange */
+    stroke-width: 6;
+    marker-end: url(#arrow-hover);
+    filter: drop-shadow(0px 4px 8px rgba(217, 119, 6, 0.4));
+  }
+
+  /* The text label on the line */
+  .edge-label {
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:700;
+    font-size:17px;
+    fill:#d97706; 
+    text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 0px 0px 8px #fff;
+    pointer-events: none; /* Prevents text from blocking the hover trigger */
+    transition: all 0.3s ease;
+  }
+
+  /* When hovered, make the text pop slightly */
+  .edge-group:hover .edge-label {
+    font-size: 19px;
+    fill: #b45309; /* Darker orange for contrast */
+  }
+
+  .title-text{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    fill:var(--navy);
+  }
+  
+  .legend-label{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    fill:var(--text-dark);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="diagram-wrap">
+  <svg id="diagram-svg" viewBox="0 0 1750 1150" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Standard Navy Arrowhead -->
+      <marker id="arrow-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#16233d"/>
+      </marker>
+      <!-- NEW: Highlighted Orange Arrowhead for Hover State -->
+      <marker id="arrow-hover" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#d97706"/>
+      </marker>
+    </defs>
+    <g id="edges-layer"></g>
+    <g id="nodes-layer"></g>
+    <g id="legend-layer"></g>
+  </svg>
+</div>
+
+<script>
+const NODES = [
+  // Top Central Path
+  { id:"ohe",          type:"ac",  x:600, y:20,  w:400, h:60, label:"25 kV AC Overhead Equipment (OHE)" },
+  { id:"pantograph",   type:"ac",  x:680, y:120, w:240, h:54, label:"Pantograph" },
+  { id:"vcb",          type:"ac",  x:640, y:214, w:320, h:54, label:"Vacuum Circuit Breaker (VCB)" },
+
+  // Transformer & Traction
+  { id:"tractionTab",  type:"ac",  x:530, y:318, w:110, h:74, label:"Traction", sub:"Winding" },
+  { id:"transformer",  type:"ac",  x:640, y:318, w:320, h:74, label:"Main Transformer", sub:"(MT – Mounted Underframe)" },
+  
+  // Propulsion goes off to the left
+  { id:"propulsion",   type:"ac",  x:100, y:325, w:320, h:60, label:"To Propulsion Motors (Wheels)" },
+
+  // SIV and Main Bus
+  { id:"converter",    type:"ac",  x:570, y:450, w:460, h:120, label:"(SIV) Auxiliary Power Converter", sub:"(Converts 1Φ AC ➔ 3Φ AC)" },
+  { id:"bus415",       type:"bus", x:200, y:630, w:1200, h:60, label:" 415V 3-Phase AC Bus Line " },
+
+  /* LEFT COLUMN (Center X = 350) */
+  { id:"mainACLoads",    type:"ac", x:170, y:740, w:360, h:80, label:"Main AC Loads", sub:"(HVAC Units, Air Compressors, Fans)" },
+  
+  /* MIDDLE COLUMN (Center X = 800) */
+  { id:"auxTransformer", type:"ac",     x:660, y:740, w:280, h:64, label:"Auxiliary Transformer" },
+  { id:"bus230",         type:"bus230", x:640, y:854, w:320, h:54, label:"== 230V 1-Phase AC Bus ==" },
+  { id:"lightACLoads",   type:"ac",     x:600, y:958, w:400, h:80, label:"Light AC Loads", sub:"(Saloon Lights, Cab Heaters, Plug Sockets)" },
+
+  /* RIGHT COLUMN (Center X = 1250) */
+  { id:"chba",            type:"dc",     x:1100, y:740, w:300, h:74, label:"Battery Charger Unit" },
+  { id:"bus110",          type:"bus110", x:1070, y:864, w:360, h:54, label:"== 110V DC Bus Line ==" },
+  { id:"criticalDCLoads", type:"dc",     x:1040, y:968, w:420, h:80, label:"Critical DC Loads", sub:"(TCMS, Signaling, Doors, Emergency)" },
+  
+  // Backup Battery attached to the right of the DC Bus
+  { id:"backupBattery",   type:"dc",     x:1480, y:864, w:240, h:54, label:"Backup Battery Bank" }
+];
+
+const EDGES = [
+  { from:"ohe", fromSide:"bottom", to:"pantograph", toSide:"top", label:"25kV AC" },
+  { from:"pantograph", fromSide:"bottom", to:"vcb", toSide:"top", label:"25kV AC" },
+  { from:"vcb", fromSide:"bottom", to:"transformer", toSide:"top", label:"25kV AC" },
+  { from:"tractionTab", fromSide:"left", to:"propulsion", toSide:"right", label:"960V" },
+  { from:"transformer", fromSide:"bottom", to:"converter", toSide:"top", label:"373V / 336V 1-Phase AC" },
+  { from:"converter", fromSide:"bottom", to:"bus415", toSide:"top", label:"415V 3-Phase AC" },
+  { from:"bus415", fromSide:"bottom", to:"mainACLoads", toSide:"top", fromX:350, label:"415V 3-Phase AC" },
+  { from:"bus415", fromSide:"bottom", to:"auxTransformer", toSide:"top", fromX:800, label:"415V 3-Phase AC" },
+  { from:"bus415", fromSide:"bottom", to:"chba", toSide:"top", fromX:1250, label:"415V 3-Phase AC" },
+  { from:"auxTransformer", fromSide:"bottom", to:"bus230", toSide:"top", label:"230V 1-Phase AC" },
+  { from:"bus230", fromSide:"bottom", to:"lightACLoads", toSide:"top", label:"230V 1-Phase AC" },
+  { from:"chba", fromSide:"bottom", to:"bus110", toSide:"top", label:"110V DC" },
+  { from:"bus110", fromSide:"bottom", to:"criticalDCLoads", toSide:"top", fromX:1250, label:"110V DC" },
+  { from:"bus110", fromSide:"right", to:"backupBattery", toSide:"left", label:"110V DC" }
+];
+
+const TITLE = "Auxiliary Power Distribution Flowchart";
+
+const LEGEND = [
+  { type:"ac",  label:"AC Power Component" },
+  { type:"dc",  label:"DC Power Component" },
+  { type:"line", label:"Main Voltage Bus" }
+];
+
+/* ===================== rendering ===================== */
+const STYLE = {
+  ac:     { fill:"#c3cdd8", stroke:"#16233d", textDark:true },
+  dc:     { fill:"#2f7a4f", stroke:"#123c26", textDark:false },
+  bus:    { fill:"#4b5563", stroke:"#16233d", textDark:false },
+  bus230: { fill:"#2f6fb0", stroke:"#16233d", textDark:false },
+  bus110: { fill:"#1f6b3f", stroke:"#123c26", textDark:false }
+};
+
+function nodeById(id){ return NODES.find(n => n.id === id); }
+
+function anchorPoint(node, side, fixedX){
+  const cx = fixedX !== undefined ? fixedX : node.x + node.w/2;
+  const cy = node.y + node.h/2;
+  switch(side){
+    case "top":    return { x: fixedX !== undefined ? fixedX : node.x + node.w/2, y: node.y };
+    case "bottom": return { x: fixedX !== undefined ? fixedX : node.x + node.w/2, y: node.y + node.h };
+    case "left":   return { x: node.x, y: cy };
+    case "right":  return { x: node.x + node.w, y: cy };
+  }
+}
+
+function svgEl(tag, attrs){
+  const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  for(const k in attrs) el.setAttribute(k, attrs[k]);
+  return el;
+}
+
+function renderNodes(){
+  const layer = document.getElementById("nodes-layer");
+  NODES.forEach(n => {
+    const s = STYLE[n.type];
+    const rect = svgEl("rect", {
+      x:n.x, y:n.y, width:n.w, height:n.h,
+      rx:8, ry:8,
+      fill:s.fill, stroke:s.stroke, "stroke-width":2.5
+    });
+    layer.appendChild(rect);
+
+    const cx = n.x + n.w/2;
+    const hasSub = !!n.sub;
+    const labelY = hasSub ? n.y + n.h/2 - 12 : n.y + n.h/2;
+
+    const label = svgEl("text", {
+      x:cx, y:labelY, class:"node-label" + (s.textDark ? "" : " on-dark"),
+      "font-size": n.w < 150 ? "18" : "21" 
+    });
+    label.textContent = n.label;
+    layer.appendChild(label);
+
+    if(hasSub){
+      const sub = svgEl("text", {
+        x:cx, y:n.y + n.h/2 + 16, class:"node-sub" + (s.textDark ? "" : " on-dark"),
+        "font-size":"16"
+      });
+      sub.textContent = n.sub;
+      layer.appendChild(sub);
+    }
+  });
+}
+
+function renderEdges(){
+  const layer = document.getElementById("edges-layer");
+  EDGES.forEach(e => {
+    const fromNode = nodeById(e.from);
+    const toNode = nodeById(e.to);
+    const p1 = anchorPoint(fromNode, e.fromSide, e.fromX);
+    const p2 = anchorPoint(toNode, e.toSide, e.toX);
+
+    let d;
+    if(p1.x === p2.x || p1.y === p2.y){
+      d = `M${p1.x},${p1.y} L${p2.x},${p2.y}`;
+    } else {
+      const midY = (p1.y + p2.y) / 2;
+      d = `M${p1.x},${p1.y} L${p1.x},${midY} L${p2.x},${midY} L${p2.x},${p2.y}`;
+    }
+
+    // NEW: Wrap the edge and text in an SVG Group (<g>)
+    const group = svgEl("g", { class: "edge-group" });
+
+    // NEW: Invisible thick hitbox to make hovering easier
+    const hitbox = svgEl("path", { d, class: "edge-hitbox" });
+    group.appendChild(hitbox);
+
+    // The actual visible line
+    const path = svgEl("path", { d, class: "edge-line" });
+    group.appendChild(path);
+
+    if(e.label){
+      const midX = (p1.x + p2.x) / 2;
+      const midY = (p1.y + p2.y) / 2;
+      
+      const xOffset = (p1.x === p2.x && e.fromSide === "bottom") ? 14 : 0; 
+      const yOffset = (p1.y === p2.y) ? -10 : 0;
+
+      const text = svgEl("text", {
+        x: midX + xOffset, 
+        y: midY + yOffset, 
+        class:"edge-label"
+      });
+      text.textContent = e.label;
+      group.appendChild(text);
+    }
+    
+    // Add the whole group to the layer
+    layer.appendChild(group);
+  });
+}
+
+function renderTitle(){
+  const layer = document.getElementById("nodes-layer");
+  const bg = svgEl("rect", {
+    x:20, y:20, width: TITLE.length * 13 + 40, height:50, rx:6,
+    fill:"#ffffff", stroke:"#16233d", "stroke-width":2
+  });
+  layer.appendChild(bg);
+  const t = svgEl("text", {
+    x:40, y:47, class:"title-text", "font-size":"26", "dominant-baseline":"middle"
+  });
+  t.textContent = TITLE;
+  layer.appendChild(t);
+}
+
+function renderLegend(){
+  const layer = document.getElementById("legend-layer");
+  const baseX = 1400, baseY = 300; 
+  
+  LEGEND.forEach((item, i) => {
+    const y = baseY + i * 35;
+    if(item.type === "line"){
+      layer.appendChild(svgEl("line", { x1:baseX, y1:y+8, x2:baseX+38, y2:y+8, stroke:"#16233d", "stroke-width":4 }));
+    } else {
+      const s = STYLE[item.type];
+      layer.appendChild(svgEl("rect", { x:baseX, y:y-4, width:38, height:22, rx:4, fill:s.fill, stroke:s.stroke, "stroke-width":1.5 }));
+    }
+    const label = svgEl("text", { x:baseX+54, y:y+12, class:"legend-label" });
+    label.textContent = item.label;
+    layer.appendChild(label);
+  });
+}
+
+renderEdges();
+renderNodes();
+renderTitle();
+renderLegend();
+</script>
+
+</body>
+</html>
