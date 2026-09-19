@@ -89,21 +89,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ==========================================
-    // 2. Edge Click Controls (10% Boundary)
+// ==========================================
+    // 2. Edge Click Controls (20% Boundary)
     // ==========================================
     deck.addEventListener('click', (e) => {
         const rect = deck.getBoundingClientRect();
         const clickX = e.clientX - rect.left;
         const width = rect.width;
 
-        if (clickX < width * 0.2) {
-            changeSlide(currentIdx - 1); 
+        if (clickX < width * 0.20) {
+            // Left 20% clicked (Previous Slide)
+            changeSlide(currentIdx - 1);
         } else if (clickX > width * 0.80) {
-            changeSlide(currentIdx + 1); 
+            // Right 20% clicked (Next Slide)
+            changeSlide(currentIdx + 1);
         }
     });
 
+
+
+    
     // ==========================================
     // 3. Keyboard Controls (Laptops/Clickers)
     // ==========================================
