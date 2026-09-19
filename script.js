@@ -97,9 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const clickX = e.clientX - rect.left;
         const width = rect.width;
 
-        if (clickX < width * 0.05) {
+        if (clickX < width * 0.1) {
             changeSlide(currentIdx - 1); 
-        } else if (clickX > width * 0.95) {
+        } else if (clickX > width * 0.90) {
             changeSlide(currentIdx + 1); 
         }
     });
