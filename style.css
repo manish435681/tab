@@ -69,8 +69,8 @@ body {
 }
 
 /* Main App Wrapper */
-.app-wrapper {
-    width: 98%;
+.app-wrapper, .presentation-container {
+    width: 95%;
     max-width: 1600px;
     height: 96vh;
     min-height: 600px;
@@ -78,6 +78,8 @@ body {
     z-index: 10;
     display: flex;
     flex-direction: column;
+    margin: auto;
+    overflow: hidden;
 }
 
 /* Deck Container (The Canvas) */
@@ -117,6 +119,8 @@ body {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 /* Typography */
@@ -426,14 +430,20 @@ body {
 /* Responsive */
 @media (max-width: 1024px) {
     .cards-layout, .split-layout { grid-template-columns: 1fr; gap: 2rem; }
-    .app-wrapper { height: 95vh; padding: 0 1rem; }
+    .app-wrapper, .presentation-container { height: 95vh; padding: 0 1rem; }
     .slide { padding: 2rem; }
 }
 
 @media (max-width: 768px) {
+    .app-wrapper, .presentation-container { 
+        width: 92%;
+        height: 92vh; 
+        min-height: 80vh; 
+    }
     .traction-grid { grid-template-columns: 1fr; }
-    .hero-title { font-size: 2.5rem; }
+    .hero-title { font-size: 2rem; } 
     .metrics-row { flex-direction: column; gap: 1.5rem; }
+    .slide { padding: 1.5rem; } 
 }
 
 /* ==========================================================================
@@ -543,44 +553,31 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    pointer-events: none; /* Allows all clicks to pass through to the page */
-    z-index: 99999; /* Ensures it stays above your zoom overlays */
+    pointer-events: none; 
+    z-index: 99999; 
     
-    /* Radial gradient using CSS Variables updated by JS */
     background: radial-gradient(
         circle 50px at var(--mouse-x, -100px) var(--mouse-y, -100px),
-        rgba(255, 255, 0, 0.4), /* Semi-transparent yellow */
+        rgba(255, 255, 0, 0.4), 
         transparent 100%
     );
     
-    /* Optional: Smoothly hide the halo when the mouse leaves the window */
     opacity: 0;
     transition: opacity 0.2s ease;
 }
 
-/* Show the halo when the body is hovered */
 body:hover .cursor-halo {
     opacity: 1;
 }
-
-
-
-
-
-
-
-
-
-
 
 /* Slide Counter Styles */
 .slide-counter {
     position: absolute;
     bottom: 16px;
     right: 24px;
-    color: var(--text-faint); /* Uses the subtle gray text from your theme */
-    font-size: 0.7rem; /* Very small font size */
+    color: var(--text-faint); 
+    font-size: 0.7rem; 
     font-weight: 500;
     z-index: 100;
-    pointer-events: none; /* Prevents it from interfering with clicks */
+    pointer-events: none; 
 }
